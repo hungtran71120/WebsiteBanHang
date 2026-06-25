@@ -219,6 +219,12 @@ onMounted(load)
   align-items: flex-start;
 }
 
+@media (max-width: 768px) {
+  .order-history-page__inner {
+    flex-direction: column;
+  }
+}
+
 .order-history-content {
   flex: 1;
   min-width: 0;
@@ -376,9 +382,10 @@ onMounted(load)
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   padding: 12px 16px;
   border-top: 1px solid var(--border);
+  flex-wrap: wrap;
 }
 
 .order-card__total {

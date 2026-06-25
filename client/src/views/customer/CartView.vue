@@ -279,4 +279,51 @@ h1 {
 .skeleton-line--short {
   width: 50%;
 }
+
+@media (max-width: 700px) {
+  .cart-table__header {
+    display: none;
+  }
+
+  .cart-table__header,
+  .cart-row {
+    grid-template-columns: repeat(3, 1fr) auto;
+    grid-template-areas:
+      'product product product product'
+      'price qty total action';
+    row-gap: 10px;
+    padding: 14px 16px;
+  }
+
+  .col-product {
+    grid-area: product;
+  }
+
+  .col-price {
+    grid-area: price;
+    font-size: 12px;
+  }
+
+  .col-qty {
+    grid-area: qty;
+  }
+
+  .col-total {
+    grid-area: total;
+  }
+
+  .col-action {
+    grid-area: action;
+    justify-self: end;
+  }
+
+  .cart-summary {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .checkout-btn {
+    flex: 1 1 100%;
+  }
+}
 </style>

@@ -277,4 +277,18 @@ onUnmounted(() => {
   font-size: 14px;
   cursor: pointer;
 }
+
+@media (max-width: 700px) {
+  .admin-chat-layout {
+    flex-direction: column;
+    height: calc(100vh - 200px);
+  }
+
+  .admin-chat-list {
+    width: 100%;
+    max-height: 160px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
 </style>

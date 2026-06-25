@@ -122,6 +122,12 @@ h1 {
   }
 }
 
+@media (max-width: 480px) {
+  .wishlist-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .wishlist-card {
   background: #fff;
   display: flex;

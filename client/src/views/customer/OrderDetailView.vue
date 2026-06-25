@@ -366,6 +366,7 @@ onMounted(async () => {
   background: #fffaf0;
   padding: 16px 20px;
   font-size: 14px;
+  flex-wrap: wrap;
 }
 
 .thank-you-banner__actions {

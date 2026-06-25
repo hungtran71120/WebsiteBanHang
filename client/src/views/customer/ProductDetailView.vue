@@ -532,8 +532,22 @@ async function addToCart() {
   padding: 24px;
 }
 
+@media (max-width: 700px) {
+  .product-card {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+}
+
 .product-card__image {
   flex: 0 0 360px;
+}
+
+@media (max-width: 700px) {
+  .product-card__image {
+    flex: 1 1 auto;
+  }
 }
 
 .product-card__image img,
@@ -740,6 +754,7 @@ async function addToCart() {
   align-items: center;
   gap: 16px;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .qty-stepper {
@@ -1023,6 +1038,12 @@ async function addToCart() {
 @media (max-width: 900px) {
   .related-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .related-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

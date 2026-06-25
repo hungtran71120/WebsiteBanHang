@@ -371,4 +371,22 @@ textarea {
   margin-bottom: 0;
   margin-left: auto;
 }
+
+@media (max-width: 480px) {
+  .card {
+    padding: 16px;
+  }
+
+  .voucher-input {
+    flex-direction: column;
+  }
+
+  .voucher-input button {
+    padding: 10px 0;
+  }
+
+  .place-order-btn {
+    width: 100%;
+  }
+}
 </style>

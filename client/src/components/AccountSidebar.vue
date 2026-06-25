@@ -45,6 +45,23 @@ const avatarInitial = computed(() => authStore.user?.fullName?.trim().charAt(0).
   background: #fff;
 }
 
+@media (max-width: 768px) {
+  .account-sidebar {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .account-sidebar__nav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 0;
+  }
+
+  .account-sidebar__link {
+    white-space: nowrap;
+  }
+}
+
 .account-sidebar__profile {
   display: flex;
   align-items: center;

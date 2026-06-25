@@ -433,11 +433,24 @@ onBeforeUnmount(() => {
   align-items: flex-start;
 }
 
+@media (max-width: 768px) {
+  .category-page__inner {
+    flex-direction: column;
+  }
+}
+
 .sidebar {
   flex: 0 0 220px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    flex: 1 1 100%;
+    width: 100%;
+  }
 }
 
 .sidebar__section {
@@ -768,6 +781,12 @@ onBeforeUnmount(() => {
 @media (max-width: 900px) {
   .product-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

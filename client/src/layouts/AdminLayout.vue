@@ -188,4 +188,54 @@ function handleLogout() {
   padding: 24px;
   overflow-y: auto;
 }
+
+@media (max-width: 900px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: auto;
+  }
+
+  .admin-logo {
+    flex-shrink: 0;
+    padding: 14px 16px;
+    border-bottom: none;
+    border-right: 1px solid #333;
+  }
+
+  .admin-nav {
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .admin-nav-link {
+    white-space: nowrap;
+    padding: 14px 16px;
+  }
+
+  .admin-content {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-topbar {
+    height: auto;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+
+  .admin-account span {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
 </style>

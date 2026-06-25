@@ -203,4 +203,44 @@ function logout() {
   padding: 1px 6px;
   line-height: 1.4;
 }
+
+@media (max-width: 768px) {
+  .utility-bar__left {
+    display: none;
+  }
+
+  .main-bar__inner {
+    gap: 12px;
+    padding: 10px 12px 14px;
+  }
+
+  .logo__text {
+    display: none;
+  }
+
+  .search input {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .cart,
+  .wishlist {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .utility-bar__inner {
+    padding: 6px 12px;
+  }
+
+  .utility-bar__right {
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  .main-bar__inner {
+    gap: 8px;
+  }
+}
 </style>

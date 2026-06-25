@@ -435,7 +435,8 @@ onMounted(async () => {
 }
 
 .variant-option-add input {
-  width: 320px;
+  width: 100%;
+  max-width: 320px;
   padding: 8px 10px;
   border: 1px solid var(--border);
   border-radius: 2px;

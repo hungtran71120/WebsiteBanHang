@@ -209,6 +209,7 @@
   border-radius: 4px;
   padding: 24px;
   width: 420px;
+  max-width: calc(100vw - 32px);
   max-height: 85vh;
   overflow-y: auto;
 }
@@ -289,4 +290,23 @@
 .admin-section h2 {
   font-size: 15px;
   margin-bottom: 14px;
+}
+
+@media (max-width: 700px) {
+  .admin-page {
+    overflow-x: auto;
+  }
+
+  .admin-table {
+    min-width: 600px;
+  }
+
+  .admin-page__header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .modal-box {
+    padding: 16px;
+  }
 }

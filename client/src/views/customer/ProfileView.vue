@@ -110,11 +110,23 @@ onMounted(load)
   align-items: flex-start;
 }
 
+@media (max-width: 768px) {
+  .account-page__inner {
+    flex-direction: column;
+  }
+}
+
 .account-content {
   flex: 1;
   min-width: 0;
   background: #fff;
   padding: 24px 32px;
+}
+
+@media (max-width: 480px) {
+  .account-content {
+    padding: 20px 16px;
+  }
 }
 
 .account-content h1 {
