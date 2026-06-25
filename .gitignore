@@ -1,0 +1,38 @@
+# =========================
+# .NET
+# =========================
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.dbmdl
+*.dll
+*.pdb
+
+# =========================
+# Node / Vite / Vue
+# =========================
+client/node_modules/
+client/dist/
+client/.env.local
+client/.env.*.local
+client/*.log
+
+# =========================
+# Uploaded files (Phase 2 - local file storage)
+# =========================
+src/API/wwwroot/uploads/**
+!src/API/wwwroot/uploads/**/.gitkeep
+
+# =========================
+# IDE
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# OS
+# =========================
+Thumbs.db
+.DS_Store
