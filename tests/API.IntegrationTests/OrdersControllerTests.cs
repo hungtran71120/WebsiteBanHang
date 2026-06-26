@@ -2,15 +2,15 @@ using System.Net;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using FluentAssertions;
-using ShopeeClone.Application.Cart.Dtos;
-using ShopeeClone.Application.Categories.Dtos;
-using ShopeeClone.Application.FlashSales.Dtos;
-using ShopeeClone.Application.Orders.Dtos;
-using ShopeeClone.Application.Products.Dtos;
-using ShopeeClone.Application.Vouchers.Dtos;
-using ShopeeClone.Domain.Enums;
+using HungStore.Application.Cart.Dtos;
+using HungStore.Application.Categories.Dtos;
+using HungStore.Application.FlashSales.Dtos;
+using HungStore.Application.Orders.Dtos;
+using HungStore.Application.Products.Dtos;
+using HungStore.Application.Vouchers.Dtos;
+using HungStore.Domain.Enums;
 
-namespace ShopeeClone.API.IntegrationTests;
+namespace HungStore.API.IntegrationTests;
 
 [Collection(IntegrationTestCollection.Name)]
 public class OrdersControllerTests

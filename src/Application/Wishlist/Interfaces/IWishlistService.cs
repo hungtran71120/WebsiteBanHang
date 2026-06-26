@@ -1,7 +1,7 @@
-using ShopeeClone.Application.Common;
-using ShopeeClone.Application.Wishlist.Dtos;
+using HungStore.Application.Common;
+using HungStore.Application.Wishlist.Dtos;
 
-namespace ShopeeClone.Application.Wishlist.Interfaces;
+namespace HungStore.Application.Wishlist.Interfaces;
 
 public interface IWishlistService
 {

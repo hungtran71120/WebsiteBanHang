@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ShopeeClone.Domain.Entities;
+using HungStore.Domain.Entities;
 
-namespace ShopeeClone.Infrastructure.Persistence.Configurations;
+namespace HungStore.Infrastructure.Persistence.Configurations;
 
 public class VoucherRedemptionConfiguration : IEntityTypeConfiguration<VoucherRedemption>
 {

@@ -1,7 +1,7 @@
 using FluentValidation;
-using ShopeeClone.Application.Vouchers.Dtos;
+using HungStore.Application.Vouchers.Dtos;
 
-namespace ShopeeClone.Application.Vouchers.Validators;
+namespace HungStore.Application.Vouchers.Validators;
 
 public class ValidateVoucherRequestValidator : AbstractValidator<ValidateVoucherRequest>
 {

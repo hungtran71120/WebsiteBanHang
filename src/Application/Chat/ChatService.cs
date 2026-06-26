@@ -1,10 +1,10 @@
-using ShopeeClone.Application.Chat.Dtos;
-using ShopeeClone.Application.Chat.Interfaces;
-using ShopeeClone.Application.Common;
-using ShopeeClone.Domain.Entities;
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Application.Chat.Dtos;
+using HungStore.Application.Chat.Interfaces;
+using HungStore.Application.Common;
+using HungStore.Domain.Entities;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Application.Chat;
+namespace HungStore.Application.Chat;
 
 public class ChatService : IChatService
 {

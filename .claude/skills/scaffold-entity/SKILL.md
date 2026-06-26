@@ -1,9 +1,9 @@
 ---
 name: scaffold-entity
-description: This skill should be used when the user asks to "scaffold an entity", "add a new entity", "create CRUD for X", "thêm entity mới", "scaffold entity Product/Category/Cart/Order/Review", "tạo CRUD cho ...", or wants to add a new domain object to the ShopeeClone project following its Clean Architecture pattern (Domain -> Application -> Infrastructure -> API).
+description: This skill should be used when the user asks to "scaffold an entity", "add a new entity", "create CRUD for X", "thêm entity mới", "scaffold entity Product/Category/Cart/Order/Review", "tạo CRUD cho ...", or wants to add a new domain object to the HungStore project following its Clean Architecture pattern (Domain -> Application -> Infrastructure -> API).
 ---
 
-Generate a new entity end-to-end for the ShopeeClone project (`E:\ProjectVuiVe\WebSiteBanHang`), following the exact Clean Architecture pattern already established in the codebase. Read `CLAUDE.md` section 3.1 for naming conventions before generating anything.
+Generate a new entity end-to-end for the HungStore project (`E:\ProjectVuiVe\WebSiteBanHang`), following the exact Clean Architecture pattern already established in the codebase. Read `CLAUDE.md` section 3.1 for naming conventions before generating anything.
 
 ## Step 1 — Clarify before generating
 

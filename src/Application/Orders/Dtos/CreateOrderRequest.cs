@@ -1,6 +1,6 @@
-using ShopeeClone.Domain.Enums;
+using HungStore.Domain.Enums;
 
-namespace ShopeeClone.Application.Orders.Dtos;
+namespace HungStore.Application.Orders.Dtos;
 
 public class CreateOrderRequest
 {

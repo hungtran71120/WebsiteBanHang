@@ -1,4 +1,4 @@
-namespace ShopeeClone.Application.FlashSales.Dtos;
+namespace HungStore.Application.FlashSales.Dtos;
 
 public class AddFlashSaleItemRequest
 {

@@ -1,7 +1,7 @@
 using FluentValidation;
-using ShopeeClone.Application.FlashSales.Dtos;
+using HungStore.Application.FlashSales.Dtos;
 
-namespace ShopeeClone.Application.FlashSales.Validators;
+namespace HungStore.Application.FlashSales.Validators;
 
 public class CreateFlashSaleRequestValidator : AbstractValidator<CreateFlashSaleRequest>
 {

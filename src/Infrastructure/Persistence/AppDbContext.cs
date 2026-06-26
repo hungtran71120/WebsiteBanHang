@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using ShopeeClone.Domain.Entities;
-using ShopeeClone.Infrastructure.Identity;
+using HungStore.Domain.Entities;
+using HungStore.Infrastructure.Identity;
 
-namespace ShopeeClone.Infrastructure.Persistence;
+namespace HungStore.Infrastructure.Persistence;
 
 public class AppDbContext : IdentityDbContext<ApplicationUser>
 {
@@ -32,6 +32,7 @@ public class AppDbContext : IdentityDbContext<ApplicationUser>
     public DbSet<VoucherRedemption> VoucherRedemptions { get; set; } = null!;
     public DbSet<FlashSale> FlashSales { get; set; } = null!;
     public DbSet<FlashSaleItem> FlashSaleItems { get; set; } = null!;
+    public DbSet<Banner> Banners { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

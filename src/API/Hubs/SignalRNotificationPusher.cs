@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.SignalR;
-using ShopeeClone.Application.Notifications.Dtos;
-using ShopeeClone.Application.Notifications.Interfaces;
+using HungStore.Application.Notifications.Dtos;
+using HungStore.Application.Notifications.Interfaces;
 
-namespace ShopeeClone.API.Hubs;
+namespace HungStore.API.Hubs;
 
 public class SignalRNotificationPusher : INotificationPusher
 {

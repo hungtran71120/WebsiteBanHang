@@ -1,6 +1,6 @@
-using ShopeeClone.Domain.Enums;
+using HungStore.Domain.Enums;
 
-namespace ShopeeClone.Application.Vouchers.Dtos;
+namespace HungStore.Application.Vouchers.Dtos;
 
 public class CreateVoucherRequest
 {

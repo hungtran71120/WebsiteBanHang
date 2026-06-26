@@ -1,14 +1,14 @@
-using ShopeeClone.Application.Auth.Interfaces;
-using ShopeeClone.Application.Common;
-using ShopeeClone.Application.Notifications.Interfaces;
-using ShopeeClone.Application.Orders.Dtos;
-using ShopeeClone.Application.Orders.Interfaces;
-using ShopeeClone.Application.Vouchers.Interfaces;
-using ShopeeClone.Domain.Entities;
-using ShopeeClone.Domain.Enums;
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Application.Auth.Interfaces;
+using HungStore.Application.Common;
+using HungStore.Application.Notifications.Interfaces;
+using HungStore.Application.Orders.Dtos;
+using HungStore.Application.Orders.Interfaces;
+using HungStore.Application.Vouchers.Interfaces;
+using HungStore.Domain.Entities;
+using HungStore.Domain.Enums;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Application.Orders;
+namespace HungStore.Application.Orders;
 
 public class OrderService : IOrderService
 {

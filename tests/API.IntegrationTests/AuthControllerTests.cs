@@ -3,9 +3,9 @@ using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.Testing;
-using ShopeeClone.Application.Auth.Dtos;
+using HungStore.Application.Auth.Dtos;
 
-namespace ShopeeClone.API.IntegrationTests;
+namespace HungStore.API.IntegrationTests;
 
 [Collection(IntegrationTestCollection.Name)]
 public class AuthControllerTests

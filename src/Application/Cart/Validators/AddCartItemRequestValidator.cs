@@ -1,7 +1,7 @@
 using FluentValidation;
-using ShopeeClone.Application.Cart.Dtos;
+using HungStore.Application.Cart.Dtos;
 
-namespace ShopeeClone.Application.Cart.Validators;
+namespace HungStore.Application.Cart.Validators;
 
 public class AddCartItemRequestValidator : AbstractValidator<AddCartItemRequest>
 {

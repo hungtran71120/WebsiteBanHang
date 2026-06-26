@@ -1,4 +1,4 @@
-namespace ShopeeClone.Application.Users.Dtos;
+namespace HungStore.Application.Users.Dtos;
 
 public class UpdateProfileRequest
 {

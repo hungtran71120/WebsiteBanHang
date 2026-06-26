@@ -1,7 +1,7 @@
-using ShopeeClone.Application.Common;
-using ShopeeClone.Application.Vouchers.Dtos;
+using HungStore.Application.Common;
+using HungStore.Application.Vouchers.Dtos;
 
-namespace ShopeeClone.Application.Vouchers.Interfaces;
+namespace HungStore.Application.Vouchers.Interfaces;
 
 public interface IVoucherService
 {

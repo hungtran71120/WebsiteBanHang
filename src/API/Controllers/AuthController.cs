@@ -1,9 +1,9 @@
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
-using ShopeeClone.Application.Auth.Dtos;
-using ShopeeClone.Application.Auth.Interfaces;
+using HungStore.Application.Auth.Dtos;
+using HungStore.Application.Auth.Interfaces;
 
-namespace ShopeeClone.API.Controllers;
+namespace HungStore.API.Controllers;
 
 [ApiController]
 [Route("api/auth")]

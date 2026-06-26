@@ -1,10 +1,10 @@
 using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ShopeeClone.Application.FlashSales.Dtos;
-using ShopeeClone.Application.FlashSales.Interfaces;
+using HungStore.Application.FlashSales.Dtos;
+using HungStore.Application.FlashSales.Interfaces;
 
-namespace ShopeeClone.API.Controllers;
+namespace HungStore.API.Controllers;
 
 [ApiController]
 [Route("api/flash-sales")]

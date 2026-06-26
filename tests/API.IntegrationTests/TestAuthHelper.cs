@@ -1,7 +1,7 @@
 using System.Net.Http.Json;
-using ShopeeClone.Application.Auth.Dtos;
+using HungStore.Application.Auth.Dtos;
 
-namespace ShopeeClone.API.IntegrationTests;
+namespace HungStore.API.IntegrationTests;
 
 public static class TestAuthHelper
 {

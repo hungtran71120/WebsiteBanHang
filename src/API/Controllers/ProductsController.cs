@@ -1,11 +1,11 @@
 using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ShopeeClone.Application.Products.Dtos;
-using ShopeeClone.Application.Products.Interfaces;
-using ShopeeClone.Application.Recommendations.Interfaces;
+using HungStore.Application.Products.Dtos;
+using HungStore.Application.Products.Interfaces;
+using HungStore.Application.Recommendations.Interfaces;
 
-namespace ShopeeClone.API.Controllers;
+namespace HungStore.API.Controllers;
 
 [ApiController]
 [Route("api/products")]

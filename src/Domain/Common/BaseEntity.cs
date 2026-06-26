@@ -1,4 +1,4 @@
-namespace ShopeeClone.Domain.Common;
+namespace HungStore.Domain.Common;
 
 public abstract class BaseEntity
 {

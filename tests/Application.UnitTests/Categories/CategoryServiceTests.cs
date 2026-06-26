@@ -1,11 +1,11 @@
 using FluentAssertions;
 using Moq;
-using ShopeeClone.Application.Categories;
-using ShopeeClone.Application.Categories.Dtos;
-using ShopeeClone.Domain.Entities;
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Application.Categories;
+using HungStore.Application.Categories.Dtos;
+using HungStore.Domain.Entities;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Application.UnitTests.Categories;
+namespace HungStore.Application.UnitTests.Categories;
 
 public class CategoryServiceTests
 {

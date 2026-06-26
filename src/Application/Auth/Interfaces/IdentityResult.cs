@@ -1,4 +1,4 @@
-namespace ShopeeClone.Application.Auth.Interfaces;
+namespace HungStore.Application.Auth.Interfaces;
 
 public class IdentityOperationResult
 {

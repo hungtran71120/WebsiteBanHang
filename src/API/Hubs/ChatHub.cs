@@ -1,9 +1,9 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
-using ShopeeClone.Application.Chat.Interfaces;
+using HungStore.Application.Chat.Interfaces;
 
-namespace ShopeeClone.API.Hubs;
+namespace HungStore.API.Hubs;
 
 [Authorize]
 public class ChatHub : Hub

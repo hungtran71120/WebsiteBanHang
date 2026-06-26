@@ -1,4 +1,4 @@
-namespace ShopeeClone.API.IntegrationTests;
+namespace HungStore.API.IntegrationTests;
 
 [CollectionDefinition(Name)]
 public class IntegrationTestCollection : ICollectionFixture<CustomWebApplicationFactory>

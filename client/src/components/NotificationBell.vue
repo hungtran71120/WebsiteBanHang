@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import AppIcon from './icons/AppIcon.vue'
 import { useNotificationStore } from '../stores/notification'
 import type { AppNotification } from '../types/notification'
 
@@ -44,7 +45,7 @@ function formatTime(value: string) {
 <template>
   <div class="notification-bell">
     <button type="button" class="bell-btn" @click="toggleOpen" aria-label="Thông báo">
-      🔔
+      <AppIcon name="bell" :size="22" />
       <span v-if="notificationStore.unreadCount > 0" class="bell-badge">
         {{ notificationStore.unreadCount > 9 ? '9+' : notificationStore.unreadCount }}
       </span>
@@ -82,22 +83,26 @@ function formatTime(value: string) {
   position: relative;
   border: none;
   background: none;
-  color: #fff;
-  font-size: 22px;
+  color: var(--text);
   cursor: pointer;
   line-height: 1;
+  display: flex;
+}
+
+.bell-btn:hover {
+  color: var(--shopee-orange);
 }
 
 .bell-badge {
   position: absolute;
-  top: -8px;
-  right: -10px;
+  top: -6px;
+  right: -8px;
   min-width: 16px;
   height: 16px;
   padding: 0 4px;
   border-radius: 8px;
-  background: #fff;
-  color: var(--shopee-orange);
+  background: var(--shopee-orange);
+  color: #fff;
   font-size: 11px;
   font-weight: 700;
   line-height: 16px;
@@ -110,9 +115,10 @@ function formatTime(value: string) {
   top: 36px;
   width: 320px;
   max-height: 420px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -126,7 +132,7 @@ function formatTime(value: string) {
   justify-content: space-between;
   font-size: 14px;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--text);
   border-bottom: 1px solid var(--border);
 }
 
@@ -156,8 +162,12 @@ function formatTime(value: string) {
   padding: 12px 16px;
   border: none;
   border-bottom: 1px solid var(--border);
-  background: #fff;
+  background: var(--surface);
   cursor: pointer;
+}
+
+.notification-item:hover {
+  background: var(--bg-page);
 }
 
 .notification-item--unread {
@@ -166,7 +176,7 @@ function formatTime(value: string) {
 
 .notification-message {
   font-size: 13px;
-  color: var(--text-primary);
+  color: var(--text);
   margin: 0 0 4px;
 }
 

@@ -1,12 +1,12 @@
 using FluentAssertions;
 using Moq;
-using ShopeeClone.Application.Vouchers;
-using ShopeeClone.Application.Vouchers.Dtos;
-using ShopeeClone.Domain.Entities;
-using ShopeeClone.Domain.Enums;
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Application.Vouchers;
+using HungStore.Application.Vouchers.Dtos;
+using HungStore.Domain.Entities;
+using HungStore.Domain.Enums;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Application.UnitTests.Vouchers;
+namespace HungStore.Application.UnitTests.Vouchers;
 
 public class VoucherServiceTests
 {

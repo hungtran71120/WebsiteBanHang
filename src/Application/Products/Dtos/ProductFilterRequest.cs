@@ -1,6 +1,6 @@
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Application.Products.Dtos;
+namespace HungStore.Application.Products.Dtos;
 
 public class ProductFilterRequest
 {

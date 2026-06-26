@@ -1,7 +1,7 @@
-using ShopeeClone.Application.Categories.Dtos;
-using ShopeeClone.Application.Common;
+using HungStore.Application.Categories.Dtos;
+using HungStore.Application.Common;
 
-namespace ShopeeClone.Application.Categories.Interfaces;
+namespace HungStore.Application.Categories.Interfaces;
 
 public interface ICategoryService
 {

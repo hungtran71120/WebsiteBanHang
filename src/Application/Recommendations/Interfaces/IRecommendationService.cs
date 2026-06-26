@@ -1,6 +1,6 @@
-using ShopeeClone.Application.Products.Dtos;
+using HungStore.Application.Products.Dtos;
 
-namespace ShopeeClone.Application.Recommendations.Interfaces;
+namespace HungStore.Application.Recommendations.Interfaces;
 
 public interface IRecommendationService
 {

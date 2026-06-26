@@ -1,6 +1,6 @@
-using ShopeeClone.Domain.Common;
+using HungStore.Domain.Common;
 
-namespace ShopeeClone.Domain.Entities;
+namespace HungStore.Domain.Entities;
 
 public class Conversation : BaseEntity
 {

@@ -1,7 +1,7 @@
-using ShopeeClone.Application.Common;
-using ShopeeClone.Application.Products.Dtos;
+using HungStore.Application.Common;
+using HungStore.Application.Products.Dtos;
 
-namespace ShopeeClone.Application.Products.Interfaces;
+namespace HungStore.Application.Products.Interfaces;
 
 public interface IProductService
 {

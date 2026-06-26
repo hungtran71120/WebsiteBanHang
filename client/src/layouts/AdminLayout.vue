@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { RouterLink, RouterView, useRouter } from 'vue-router'
+import AppIcon from '../components/icons/AppIcon.vue'
 import { useAuthStore } from '../stores/auth'
 import { useChatStore } from '../stores/chat'
 import '../styles/admin.css'
@@ -15,14 +16,15 @@ onMounted(async () => {
 })
 
 const navItems = [
-  { to: '/admin', label: 'Thống kê' },
-  { to: '/admin/categories', label: 'Danh mục' },
-  { to: '/admin/products', label: 'Sản phẩm' },
-  { to: '/admin/orders', label: 'Đơn hàng' },
-  { to: '/admin/vouchers', label: 'Voucher' },
-  { to: '/admin/flash-sales', label: 'Flash Sale' },
-  { to: '/admin/users', label: 'Người dùng' },
-  { to: '/admin/chat', label: 'Chat' },
+  { to: '/admin', label: 'Thống kê', icon: 'grid' as const },
+  { to: '/admin/categories', label: 'Danh mục', icon: 'tag' as const },
+  { to: '/admin/products', label: 'Sản phẩm', icon: 'box' as const },
+  { to: '/admin/orders', label: 'Đơn hàng', icon: 'cart' as const },
+  { to: '/admin/vouchers', label: 'Voucher', icon: 'percent' as const },
+  { to: '/admin/flash-sales', label: 'Flash Sale', icon: 'zap' as const },
+  { to: '/admin/banners', label: 'Banner', icon: 'image' as const },
+  { to: '/admin/users', label: 'Người dùng', icon: 'users' as const },
+  { to: '/admin/chat', label: 'Chat', icon: 'chat' as const },
 ]
 
 function handleLogout() {
@@ -34,7 +36,7 @@ function handleLogout() {
 <template>
   <div class="admin-layout">
     <aside class="admin-sidebar">
-      <RouterLink to="/" class="admin-logo">Shopee Clone <span>Admin</span></RouterLink>
+      <RouterLink to="/" class="admin-logo">Hưng Store <span>Admin</span></RouterLink>
       <nav class="admin-nav">
         <RouterLink
           v-for="item in navItems"
@@ -44,7 +46,8 @@ function handleLogout() {
           active-class="admin-nav-link--active"
           exact-active-class="admin-nav-link--active"
         >
-          {{ item.label }}
+          <AppIcon :name="item.icon" :size="18" />
+          <span>{{ item.label }}</span>
           <span v-if="item.to === '/admin/chat' && chatStore.totalUnreadMessagesForAdmin > 0" class="admin-nav-badge">
             {{ chatStore.totalUnreadMessagesForAdmin > 9 ? '9+' : chatStore.totalUnreadMessagesForAdmin }}
           </span>
@@ -53,10 +56,17 @@ function handleLogout() {
     </aside>
     <div class="admin-main">
       <header class="admin-topbar">
-        <RouterLink to="/" class="admin-back-link">← Về trang khách hàng</RouterLink>
+        <RouterLink to="/" class="admin-back-link">
+          <AppIcon name="chevron-left" :size="16" />
+          Về trang khách hàng
+        </RouterLink>
         <div class="admin-account">
+          <span class="admin-account__avatar"><AppIcon name="user" :size="16" /></span>
           <span>{{ authStore.user?.fullName }}</span>
-          <button type="button" class="admin-logout-btn" @click="handleLogout">Đăng xuất</button>
+          <button type="button" class="admin-logout-btn" @click="handleLogout">
+            <AppIcon name="log-out" :size="14" />
+            Đăng xuất
+          </button>
         </div>
       </header>
       <main class="admin-content">
@@ -75,9 +85,9 @@ function handleLogout() {
 }
 
 .admin-sidebar {
-  width: 220px;
+  width: 232px;
   flex-shrink: 0;
-  background: #1a1a1a;
+  background: #18181b;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -85,11 +95,12 @@ function handleLogout() {
 
 .admin-logo {
   display: block;
-  padding: 20px 16px;
+  padding: 22px 20px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   color: #fff;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .admin-logo span {
@@ -99,17 +110,20 @@ function handleLogout() {
 .admin-nav {
   display: flex;
   flex-direction: column;
-  padding: 8px 0;
+  gap: 2px;
+  padding: 12px;
 }
 
 .admin-nav-link {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  color: #ccc;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  color: #a1a1aa;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13.5px;
+  font-weight: 500;
 }
 
 .admin-nav-badge {
@@ -123,17 +137,17 @@ function handleLogout() {
   font-weight: 600;
   line-height: 18px;
   text-align: center;
+  margin-left: auto;
 }
 
 .admin-nav-link:hover {
-  background: #2a2a2a;
+  background: rgba(255, 255, 255, 0.06);
   color: #fff;
 }
 
 .admin-nav-link--active {
   background: var(--shopee-orange);
   color: #fff;
-  font-weight: 500;
 }
 
 .admin-main {
@@ -144,9 +158,9 @@ function handleLogout() {
 }
 
 .admin-topbar {
-  height: 56px;
+  height: 60px;
   flex-shrink: 0;
-  background: #fff;
+  background: var(--surface);
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
@@ -155,6 +169,9 @@ function handleLogout() {
 }
 
 .admin-back-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   text-decoration: none;
   color: var(--text-secondary);
   font-size: 13px;
@@ -167,15 +184,31 @@ function handleLogout() {
 .admin-account {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   font-size: 13px;
 }
 
+.admin-account__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--shopee-orange-light);
+  color: var(--shopee-orange);
+}
+
 .admin-logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   border: 1px solid var(--border);
-  background: #fff;
-  border-radius: 2px;
+  background: var(--surface);
+  border-radius: var(--radius-sm);
   padding: 6px 12px;
+  font-size: 13px;
+  color: var(--text);
 }
 
 .admin-logout-btn:hover {

@@ -4,11 +4,11 @@ using System.Security.Cryptography;
 using System.Text;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using ShopeeClone.Application.Auth.Dtos;
-using ShopeeClone.Application.Auth.Interfaces;
-using ShopeeClone.Domain.Entities;
+using HungStore.Application.Auth.Dtos;
+using HungStore.Application.Auth.Interfaces;
+using HungStore.Domain.Entities;
 
-namespace ShopeeClone.Infrastructure.Identity;
+namespace HungStore.Infrastructure.Identity;
 
 public class TokenService : ITokenService
 {

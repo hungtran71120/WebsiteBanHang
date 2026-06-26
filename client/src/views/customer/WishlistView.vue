@@ -186,7 +186,7 @@ h1 {
   background: #fff;
   padding: 6px 0;
   font-size: 12px;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .wishlist-card__actions button:disabled {

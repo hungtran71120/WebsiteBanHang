@@ -1,10 +1,10 @@
-using ShopeeClone.Application.Auth.Dtos;
-using ShopeeClone.Application.Auth.Interfaces;
-using ShopeeClone.Application.Common;
-using ShopeeClone.Application.Users.Dtos;
-using ShopeeClone.Application.Users.Interfaces;
+using HungStore.Application.Auth.Dtos;
+using HungStore.Application.Auth.Interfaces;
+using HungStore.Application.Common;
+using HungStore.Application.Users.Dtos;
+using HungStore.Application.Users.Interfaces;
 
-namespace ShopeeClone.Application.Users;
+namespace HungStore.Application.Users;
 
 public class UserService : IUserService
 {

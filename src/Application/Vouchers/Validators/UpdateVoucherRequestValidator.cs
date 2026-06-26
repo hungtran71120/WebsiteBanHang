@@ -1,8 +1,8 @@
 using FluentValidation;
-using ShopeeClone.Application.Vouchers.Dtos;
-using ShopeeClone.Domain.Enums;
+using HungStore.Application.Vouchers.Dtos;
+using HungStore.Domain.Enums;
 
-namespace ShopeeClone.Application.Vouchers.Validators;
+namespace HungStore.Application.Vouchers.Validators;
 
 public class UpdateVoucherRequestValidator : AbstractValidator<UpdateVoucherRequest>
 {

@@ -4,15 +4,15 @@ using System.Net.Http.Json;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using ShopeeClone.Application.Cart.Dtos;
-using ShopeeClone.Application.Categories.Dtos;
-using ShopeeClone.Application.Orders.Dtos;
-using ShopeeClone.Application.Products.Dtos;
-using ShopeeClone.Application.Reviews.Dtos;
-using ShopeeClone.Domain.Enums;
-using ShopeeClone.Infrastructure.Persistence;
+using HungStore.Application.Cart.Dtos;
+using HungStore.Application.Categories.Dtos;
+using HungStore.Application.Orders.Dtos;
+using HungStore.Application.Products.Dtos;
+using HungStore.Application.Reviews.Dtos;
+using HungStore.Domain.Enums;
+using HungStore.Infrastructure.Persistence;
 
-namespace ShopeeClone.API.IntegrationTests;
+namespace HungStore.API.IntegrationTests;
 
 [Collection(IntegrationTestCollection.Name)]
 public class ReviewsControllerTests

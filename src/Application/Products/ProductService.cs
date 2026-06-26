@@ -1,10 +1,10 @@
-using ShopeeClone.Application.Common;
-using ShopeeClone.Application.Products.Dtos;
-using ShopeeClone.Application.Products.Interfaces;
-using ShopeeClone.Domain.Entities;
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Application.Common;
+using HungStore.Application.Products.Dtos;
+using HungStore.Application.Products.Interfaces;
+using HungStore.Domain.Entities;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Application.Products;
+namespace HungStore.Application.Products;
 
 public class ProductService : IProductService
 {

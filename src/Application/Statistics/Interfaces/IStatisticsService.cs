@@ -1,6 +1,6 @@
-using ShopeeClone.Application.Statistics.Dtos;
+using HungStore.Application.Statistics.Dtos;
 
-namespace ShopeeClone.Application.Statistics.Interfaces;
+namespace HungStore.Application.Statistics.Interfaces;
 
 public interface IStatisticsService
 {

@@ -2,6 +2,7 @@
 import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { confirmDelivery as confirmDeliveryApi, getOrderById } from '../../api/orders'
+import AppIcon from '../../components/icons/AppIcon.vue'
 import { resolveImageUrl } from '../../utils/url'
 import { useAuthStore } from '../../stores/auth'
 import { useChatStore } from '../../stores/chat'
@@ -27,11 +28,11 @@ const paymentLabels: Record<string, string> = {
   MockPaid: 'Đã thanh toán (mô phỏng)',
 }
 
-const stageDefinitions: { status: OrderStatus; label: string; icon: string }[] = [
-  { status: 'Pending', label: 'Đơn Hàng Đã Đặt', icon: '📝' },
-  { status: 'Confirmed', label: 'Đơn Hàng Đã Xác Nhận', icon: '✅' },
-  { status: 'Shipped', label: 'Đang Vận Chuyển', icon: '🚚' },
-  { status: 'Delivered', label: 'Đã Nhận Được Hàng', icon: '📦' },
+const stageDefinitions: { status: OrderStatus; label: string; icon: 'box' | 'check' | 'truck' | 'home' }[] = [
+  { status: 'Pending', label: 'Đơn Hàng Đã Đặt', icon: 'box' },
+  { status: 'Confirmed', label: 'Đơn Hàng Đã Xác Nhận', icon: 'check' },
+  { status: 'Shipped', label: 'Đang Vận Chuyển', icon: 'truck' },
+  { status: 'Delivered', label: 'Đã Nhận Được Hàng', icon: 'home' },
 ]
 
 const timestampByStatus = computed(() => {
@@ -131,13 +132,13 @@ onMounted(async () => {
         <div class="card stepper-card">
           <div v-if="order.status === 'Cancelled'" class="stepper">
             <div class="step done">
-              <div class="step__icon">📝</div>
+              <div class="step__icon"><AppIcon name="box" :size="18" /></div>
               <p class="step__label">Đơn Hàng Đã Đặt</p>
               <p v-if="timestampByStatus.Pending" class="step__time">{{ formatDateTime(timestampByStatus.Pending) }}</p>
             </div>
             <div class="step__line done cancelled"></div>
             <div class="step done cancelled">
-              <div class="step__icon">✕</div>
+              <div class="step__icon"><AppIcon name="x" :size="18" /></div>
               <p class="step__label">Đơn Hàng Đã Hủy</p>
               <p v-if="timestampByStatus.Cancelled" class="step__time">
                 {{ formatDateTime(timestampByStatus.Cancelled) }}
@@ -148,7 +149,7 @@ onMounted(async () => {
           <div v-else class="stepper">
             <template v-for="(step, index) in steps" :key="step.status">
               <div class="step" :class="{ done: step.reached }">
-                <div class="step__icon">{{ step.icon }}</div>
+                <div class="step__icon"><AppIcon :name="step.icon" :size="18" /></div>
                 <p class="step__label">{{ step.label }}</p>
                 <p v-if="step.timestamp" class="step__time">{{ formatDateTime(step.timestamp) }}</p>
               </div>
@@ -167,7 +168,7 @@ onMounted(async () => {
         </div>
 
         <div v-if="order.status === 'Delivered'" class="thank-you-banner">
-          <span>Cảm ơn bạn đã mua sắm tại ShopeeClone!</span>
+          <span>Cảm ơn bạn đã mua sắm tại Hưng Store!</span>
           <div class="thank-you-banner__actions">
             <button type="button" class="btn-outline" @click="contactSeller">Liên Hệ Người Bán</button>
             <RouterLink v-if="order.items[0]" :to="`/products/${order.items[0].productId}`" class="btn-solid">
@@ -313,9 +314,9 @@ onMounted(async () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
   margin-bottom: 8px;
-  background: #fff;
+  background: var(--surface);
+  color: var(--text-secondary);
 }
 
 .step.done {
@@ -381,7 +382,7 @@ onMounted(async () => {
   align-items: center;
   padding: 8px 16px;
   font-size: 13px;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
   text-decoration: none;
   cursor: pointer;
 }

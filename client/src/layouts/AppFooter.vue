@@ -11,7 +11,7 @@
         <span>Chính Sách Đổi Trả</span>
       </div>
       <div class="column">
-        <h4>VỀ SHOPEECLONE</h4>
+        <h4>VỀ HƯNG STORE</h4>
         <span>Giới Thiệu</span>
         <span>Tuyển Dụng</span>
         <span>Điều Khoản</span>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="app-footer__bottom">
-      © 2026 ShopeeClone — Đồ án portfolio, không liên kết với Shopee.
+      © 2026 Hưng Store — Đồ án portfolio, không liên kết với Shopee.
     </div>
   </footer>
 </template>
@@ -38,14 +38,14 @@
 <style scoped>
 .app-footer {
   margin-top: auto;
-  background: #fff;
+  background: var(--surface);
   border-top: 1px solid var(--border);
 }
 
 .app-footer__columns {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 32px 16px;
+  padding: 40px 16px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 24px;
@@ -54,18 +54,21 @@
 .column {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 11px;
 }
 
 .column h4 {
-  font-size: 13px;
-  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text);
   margin-bottom: 4px;
 }
 
 .column span {
   font-size: 13px;
   color: var(--text-secondary);
+  cursor: default;
 }
 
 .app-footer__bottom {

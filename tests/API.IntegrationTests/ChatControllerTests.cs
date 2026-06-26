@@ -2,10 +2,10 @@ using System.Net;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using FluentAssertions;
-using ShopeeClone.Application.Chat.Dtos;
-using ShopeeClone.Application.Common;
+using HungStore.Application.Chat.Dtos;
+using HungStore.Application.Common;
 
-namespace ShopeeClone.API.IntegrationTests;
+namespace HungStore.API.IntegrationTests;
 
 [Collection(IntegrationTestCollection.Name)]
 public class ChatControllerTests

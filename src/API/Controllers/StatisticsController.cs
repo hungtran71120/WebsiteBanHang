@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ShopeeClone.Application.Statistics.Interfaces;
+using HungStore.Application.Statistics.Interfaces;
 
-namespace ShopeeClone.API.Controllers;
+namespace HungStore.API.Controllers;
 
 [ApiController]
 [Authorize(Roles = "Admin")]

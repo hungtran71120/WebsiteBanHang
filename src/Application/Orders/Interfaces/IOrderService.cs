@@ -1,8 +1,8 @@
-using ShopeeClone.Application.Common;
-using ShopeeClone.Application.Orders.Dtos;
-using ShopeeClone.Domain.Enums;
+using HungStore.Application.Common;
+using HungStore.Application.Orders.Dtos;
+using HungStore.Domain.Enums;
 
-namespace ShopeeClone.Application.Orders.Interfaces;
+namespace HungStore.Application.Orders.Interfaces;
 
 public interface IOrderService
 {

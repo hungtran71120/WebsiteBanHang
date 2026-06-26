@@ -1,10 +1,10 @@
 using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ShopeeClone.Application.Categories.Dtos;
-using ShopeeClone.Application.Categories.Interfaces;
+using HungStore.Application.Categories.Dtos;
+using HungStore.Application.Categories.Interfaces;
 
-namespace ShopeeClone.API.Controllers;
+namespace HungStore.API.Controllers;
 
 [ApiController]
 [Route("api/categories")]

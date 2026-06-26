@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import AccountSidebar from '../../components/AccountSidebar.vue'
+import AppIcon from '../../components/icons/AppIcon.vue'
 import { confirmDelivery as confirmDeliveryApi, getMyOrders } from '../../api/orders'
 import { resolveImageUrl } from '../../utils/url'
 import { useChatStore } from '../../stores/chat'
@@ -118,7 +119,7 @@ onMounted(load)
         </div>
 
         <div class="order-search">
-          <span class="order-search__icon">🔍</span>
+          <span class="order-search__icon"><AppIcon name="search" :size="16" /></span>
           <input v-model="keyword" type="text" placeholder="Tìm theo Mã đơn hàng hoặc Tên sản phẩm" />
         </div>
 
@@ -259,15 +260,16 @@ onMounted(load)
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #fff;
+  background: var(--surface);
   padding: 12px 16px;
   margin-bottom: 12px;
-  border-bottom: 1px solid var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
 }
 
 .order-search__icon {
   color: var(--text-secondary);
-  font-size: 13px;
+  display: flex;
 }
 
 .order-search input {
@@ -408,7 +410,7 @@ onMounted(load)
   align-items: center;
   padding: 8px 16px;
   font-size: 13px;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
   text-decoration: none;
   cursor: pointer;
 }
@@ -438,7 +440,7 @@ onMounted(load)
   height: 32px;
   border: 1px solid var(--border);
   background: #fff;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .pagination button:disabled {

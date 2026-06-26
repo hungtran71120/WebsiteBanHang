@@ -1,7 +1,7 @@
-using ShopeeClone.Domain.Common;
-using ShopeeClone.Domain.Enums;
+using HungStore.Domain.Common;
+using HungStore.Domain.Enums;
 
-namespace ShopeeClone.Domain.Entities;
+namespace HungStore.Domain.Entities;
 
 public class OrderStatusHistory : BaseEntity
 {

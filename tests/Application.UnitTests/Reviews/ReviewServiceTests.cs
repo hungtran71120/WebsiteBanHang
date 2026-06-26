@@ -1,13 +1,13 @@
 using FluentAssertions;
 using Moq;
-using ShopeeClone.Application.Auth.Dtos;
-using ShopeeClone.Application.Auth.Interfaces;
-using ShopeeClone.Application.Reviews;
-using ShopeeClone.Application.Reviews.Dtos;
-using ShopeeClone.Domain.Entities;
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Application.Auth.Dtos;
+using HungStore.Application.Auth.Interfaces;
+using HungStore.Application.Reviews;
+using HungStore.Application.Reviews.Dtos;
+using HungStore.Domain.Entities;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Application.UnitTests.Reviews;
+namespace HungStore.Application.UnitTests.Reviews;
 
 public class ReviewServiceTests
 {

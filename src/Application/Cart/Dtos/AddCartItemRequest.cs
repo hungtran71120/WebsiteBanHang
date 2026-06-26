@@ -1,4 +1,4 @@
-namespace ShopeeClone.Application.Cart.Dtos;
+namespace HungStore.Application.Cart.Dtos;
 
 public class AddCartItemRequest
 {

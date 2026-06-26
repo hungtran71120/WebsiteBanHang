@@ -133,7 +133,7 @@ onUnmounted(() => {
   display: flex;
   height: calc(100vh - 160px);
   border: 1px solid var(--border);
-  border-radius: 4px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   background: #fff;
 }

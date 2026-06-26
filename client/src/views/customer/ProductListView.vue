@@ -2,6 +2,8 @@
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { RouterLink } from 'vue-router'
+import AppIcon from '../../components/icons/AppIcon.vue'
+import BannerCarousel from '../../components/BannerCarousel.vue'
 import { getCategories } from '../../api/categories'
 import { getProducts } from '../../api/products'
 import { getRecommendations } from '../../api/recommendations'
@@ -229,7 +231,7 @@ onBeforeUnmount(() => {
     <div class="category-page__inner">
       <aside class="sidebar">
         <div class="sidebar__section">
-          <h3>☰ Tất Cả Danh Mục</h3>
+          <h3><AppIcon name="menu" :size="16" /> Tất Cả Danh Mục</h3>
           <ul class="category-tree">
             <li>
               <a :class="{ active: categoryId === '' }" @click="selectCategory('')">Tất cả sản phẩm</a>
@@ -258,9 +260,11 @@ onBeforeUnmount(() => {
       </aside>
 
       <section class="content">
+        <BannerCarousel />
+
         <div v-if="showFlashSaleBanner" class="flash-sale">
           <div class="flash-sale__header">
-            <h3>⚡ Flash Sale</h3>
+            <h3><AppIcon name="zap" :size="16" :filled="true" /> Flash Sale</h3>
             <div v-if="flashSaleHeaderCountdown && !flashSaleHeaderCountdown.ended" class="flash-sale__countdown">
               <span class="flash-sale__countdown-label">Kết thúc trong</span>
               <span class="flash-sale__countdown-box">{{ flashSaleHeaderCountdown.hours }}</span>
@@ -368,7 +372,7 @@ onBeforeUnmount(() => {
                 :aria-label="wishlistStore.has(product.id) ? 'Bỏ yêu thích' : 'Thêm vào yêu thích'"
                 @click.stop.prevent="toggleWishlist(product.id)"
               >
-                {{ wishlistStore.has(product.id) ? '❤️' : '🤍' }}
+                <AppIcon name="heart" :size="16" :filled="wishlistStore.has(product.id)" />
               </button>
               <img
                 v-if="resolveImageUrl(product.imageUrl)"
@@ -454,8 +458,11 @@ onBeforeUnmount(() => {
 }
 
 .sidebar__section {
-  background: #fff;
-  padding: 12px 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 0;
+  overflow: hidden;
 }
 
 .sidebar__section h3 {
@@ -510,7 +517,7 @@ onBeforeUnmount(() => {
   flex: 1;
   padding: 6px 8px;
   border: 1px solid #ccc;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .apply-btn {
@@ -520,7 +527,7 @@ onBeforeUnmount(() => {
   background: var(--shopee-orange);
   color: #fff;
   border: none;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
   padding: 8px 0;
   font-size: 13px;
 }
@@ -531,10 +538,11 @@ onBeforeUnmount(() => {
 }
 
 .flash-sale {
-  background: linear-gradient(180deg, #fff2ee, #fff);
-  padding: 12px 16px;
+  background: linear-gradient(180deg, var(--shopee-orange-light), var(--surface));
+  padding: 14px 16px;
   margin-bottom: 12px;
   border: 1px solid #ffd9cc;
+  border-radius: var(--radius-md);
 }
 
 .flash-sale__header {
@@ -569,7 +577,7 @@ onBeforeUnmount(() => {
   font-size: 12.5px;
   min-width: 18px;
   text-align: center;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
   padding: 2px 4px;
 }
 
@@ -589,7 +597,15 @@ onBeforeUnmount(() => {
   text-decoration: none;
   color: inherit;
   border: 1px solid var(--border);
-  background: #fff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--surface);
+  transition: box-shadow 0.18s, transform 0.18s;
+}
+
+.flash-sale-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .flash-sale-card img,
@@ -750,7 +766,7 @@ onBeforeUnmount(() => {
   background: #fff;
   padding: 6px 14px;
   font-size: 13px;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .toolbar__tab.active {
@@ -792,13 +808,15 @@ onBeforeUnmount(() => {
 
 .product-card {
   position: relative;
-  background: #fff;
+  background: var(--surface);
   text-decoration: none;
   color: inherit;
   display: flex;
   flex-direction: column;
-  border: 1px solid transparent;
-  transition: box-shadow 0.15s, border-color 0.15s;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: box-shadow 0.18s, border-color 0.18s, transform 0.18s;
 }
 
 .wishlist-toggle {
@@ -806,21 +824,31 @@ onBeforeUnmount(() => {
   top: 6px;
   right: 6px;
   z-index: 1;
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   border: none;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.85);
-  font-size: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-sm);
+  color: var(--text-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
 
+.wishlist-toggle:hover {
+  color: var(--shopee-orange);
+}
+
+.wishlist-toggle.active {
+  color: var(--shopee-orange);
+}
+
 .product-card:hover {
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
   border-color: var(--border);
+  transform: translateY(-2px);
 }
 
 .product-card img,

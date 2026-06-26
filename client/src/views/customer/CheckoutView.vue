@@ -212,7 +212,7 @@ textarea {
   width: 100%;
   padding: 10px 12px;
   border: 1px solid var(--border);
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
   resize: vertical;
 }
 
@@ -258,7 +258,7 @@ textarea {
   flex: 1;
   padding: 10px 12px;
   border: 1px solid var(--border);
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .voucher-input button {
@@ -267,7 +267,7 @@ textarea {
   border: none;
   padding: 0 16px;
   font-size: 13px;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .voucher-input button:disabled {
@@ -332,7 +332,7 @@ textarea {
   border: none;
   padding: 12px 40px;
   font-size: 15px;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .place-order-btn:disabled {

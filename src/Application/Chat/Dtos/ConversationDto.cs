@@ -1,4 +1,4 @@
-namespace ShopeeClone.Application.Chat.Dtos;
+namespace HungStore.Application.Chat.Dtos;
 
 public class ConversationDto
 {

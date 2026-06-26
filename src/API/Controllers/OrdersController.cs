@@ -2,11 +2,11 @@ using System.Security.Claims;
 using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ShopeeClone.Application.Orders.Dtos;
-using ShopeeClone.Application.Orders.Interfaces;
-using ShopeeClone.Domain.Enums;
+using HungStore.Application.Orders.Dtos;
+using HungStore.Application.Orders.Interfaces;
+using HungStore.Domain.Enums;
 
-namespace ShopeeClone.API.Controllers;
+namespace HungStore.API.Controllers;
 
 [ApiController]
 [Authorize]

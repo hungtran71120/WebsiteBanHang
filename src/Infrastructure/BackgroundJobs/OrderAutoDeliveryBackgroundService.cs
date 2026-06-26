@@ -1,9 +1,9 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using ShopeeClone.Application.Orders.Interfaces;
+using HungStore.Application.Orders.Interfaces;
 
-namespace ShopeeClone.Infrastructure.BackgroundJobs;
+namespace HungStore.Infrastructure.BackgroundJobs;
 
 public class OrderAutoDeliveryBackgroundService : BackgroundService
 {

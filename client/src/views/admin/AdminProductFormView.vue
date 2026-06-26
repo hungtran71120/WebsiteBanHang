@@ -365,7 +365,7 @@ onMounted(async () => {
   height: 120px;
   object-fit: cover;
   margin-bottom: 12px;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
   background: var(--bg-page);
 }
 
@@ -394,7 +394,7 @@ onMounted(async () => {
   align-items: center;
   gap: 6px;
   border: 1px solid var(--border);
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
   padding: 6px 10px;
   font-size: 13px;
 }
@@ -403,7 +403,7 @@ onMounted(async () => {
   width: 24px;
   height: 24px;
   object-fit: cover;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .variant-value-chip__upload {
@@ -439,7 +439,7 @@ onMounted(async () => {
   max-width: 320px;
   padding: 8px 10px;
   border: 1px solid var(--border);
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .variant-value-add input,
@@ -447,7 +447,7 @@ onMounted(async () => {
 .variant-sku-add input {
   padding: 8px 10px;
   border: 1px solid var(--border);
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .variant-stock-input {

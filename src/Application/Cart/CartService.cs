@@ -1,10 +1,10 @@
-using ShopeeClone.Application.Cart.Dtos;
-using ShopeeClone.Application.Cart.Interfaces;
-using ShopeeClone.Application.Common;
-using ShopeeClone.Domain.Entities;
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Application.Cart.Dtos;
+using HungStore.Application.Cart.Interfaces;
+using HungStore.Application.Common;
+using HungStore.Domain.Entities;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Application.Cart;
+namespace HungStore.Application.Cart;
 
 public class CartService : ICartService
 {

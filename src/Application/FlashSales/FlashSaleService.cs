@@ -1,10 +1,10 @@
-using ShopeeClone.Application.Common;
-using ShopeeClone.Application.FlashSales.Dtos;
-using ShopeeClone.Application.FlashSales.Interfaces;
-using ShopeeClone.Domain.Entities;
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Application.Common;
+using HungStore.Application.FlashSales.Dtos;
+using HungStore.Application.FlashSales.Interfaces;
+using HungStore.Domain.Entities;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Application.FlashSales;
+namespace HungStore.Application.FlashSales;
 
 public class FlashSaleService : IFlashSaleService
 {

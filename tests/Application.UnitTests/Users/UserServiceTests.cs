@@ -1,11 +1,11 @@
 using FluentAssertions;
 using Moq;
-using ShopeeClone.Application.Auth.Dtos;
-using ShopeeClone.Application.Auth.Interfaces;
-using ShopeeClone.Application.Users;
-using ShopeeClone.Application.Users.Dtos;
+using HungStore.Application.Auth.Dtos;
+using HungStore.Application.Auth.Interfaces;
+using HungStore.Application.Users;
+using HungStore.Application.Users.Dtos;
 
-namespace ShopeeClone.Application.UnitTests.Users;
+namespace HungStore.Application.UnitTests.Users;
 
 public class UserServiceTests
 {

@@ -1,7 +1,7 @@
-using ShopeeClone.Application.Common;
-using ShopeeClone.Application.FlashSales.Dtos;
+using HungStore.Application.Common;
+using HungStore.Application.FlashSales.Dtos;
 
-namespace ShopeeClone.Application.FlashSales.Interfaces;
+namespace HungStore.Application.FlashSales.Interfaces;
 
 public interface IFlashSaleService
 {

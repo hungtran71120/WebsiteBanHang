@@ -1,10 +1,10 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ShopeeClone.Application.Wishlist.Dtos;
-using ShopeeClone.Application.Wishlist.Interfaces;
+using HungStore.Application.Wishlist.Dtos;
+using HungStore.Application.Wishlist.Interfaces;
 
-namespace ShopeeClone.API.Controllers;
+namespace HungStore.API.Controllers;
 
 [ApiController]
 [Authorize]

@@ -160,7 +160,7 @@ onMounted(load)
 .profile-form input {
   padding: 10px 12px;
   border: 1px solid var(--border);
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .profile-form input:disabled {
@@ -174,7 +174,7 @@ onMounted(load)
   background: var(--shopee-orange);
   color: #fff;
   border: none;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
   padding: 10px 24px;
   font-size: 14px;
 }

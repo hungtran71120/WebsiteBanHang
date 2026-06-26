@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import AppIcon from '../../components/icons/AppIcon.vue'
 import { createReview, deleteReview, getProductReviews, updateReview } from '../../api/reviews'
 import { getProductById, getRelatedProducts } from '../../api/products'
 import { useAuthStore } from '../../stores/auth'
@@ -319,7 +320,7 @@ async function addToCart() {
 
           <div v-if="product.flashSalePrice != null" class="price-box price-box--flash">
             <div class="price-box__flash-header">
-              <span class="price-box__flash-label">⚡ Flash Sale</span>
+              <span class="price-box__flash-label"><AppIcon name="zap" :size="14" :filled="true" /> Flash Sale</span>
               <span v-if="product.flashSaleEndsAt" class="price-box__flash-countdown">
                 Kết thúc trong {{ flashSaleCountdown(product.flashSaleEndsAt) }}
               </span>
@@ -398,7 +399,8 @@ async function addToCart() {
               :class="{ active: wishlistStore.has(product.id) }"
               @click="toggleWishlist"
             >
-              {{ wishlistStore.has(product.id) ? '❤️ Đã Yêu Thích' : '🤍 Yêu Thích' }}
+              <AppIcon name="heart" :size="16" :filled="wishlistStore.has(product.id)" />
+              {{ wishlistStore.has(product.id) ? 'Đã Yêu Thích' : 'Yêu Thích' }}
             </button>
           </div>
           <p v-if="addToCartMessage" class="add-to-cart-message">{{ addToCartMessage }}</p>
@@ -696,7 +698,7 @@ async function addToCart() {
   background: #fff;
   padding: 6px 12px 6px 6px;
   font-size: 13px;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   min-width: 140px;
 }
@@ -734,7 +736,7 @@ async function addToCart() {
   background: #fff;
   padding: 8px 16px;
   font-size: 13px;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
 }
 
@@ -783,7 +785,7 @@ async function addToCart() {
   border: none;
   padding: 12px 28px;
   font-size: 14px;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .add-to-cart-btn:disabled {
@@ -797,12 +799,20 @@ async function addToCart() {
 }
 
 .wishlist-btn {
-  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface);
   border: 1px solid var(--border);
   padding: 12px 20px;
   font-size: 14px;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
+}
+
+.wishlist-btn:hover {
+  border-color: var(--shopee-orange);
+  color: var(--shopee-orange);
 }
 
 .wishlist-btn.active {
@@ -936,7 +946,7 @@ async function addToCart() {
   border: none;
   padding: 8px 20px;
   font-size: 13px;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .review-form__submit:disabled {
@@ -948,7 +958,7 @@ async function addToCart() {
   border: 1px solid var(--border);
   padding: 8px 20px;
   font-size: 13px;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .review-form__error {
@@ -1009,7 +1019,7 @@ async function addToCart() {
   border: 1px solid var(--border);
   padding: 8px 24px;
   font-size: 13px;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .review-section__error {

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import AppIcon from '../components/icons/AppIcon.vue'
 import NotificationBell from '../components/NotificationBell.vue'
 import { useAuthStore } from '../stores/auth'
 import { useCartStore } from '../stores/cart'
@@ -61,25 +62,25 @@ function logout() {
     <div class="main-bar">
       <div class="main-bar__inner">
         <RouterLink to="/" class="logo">
-          <span class="logo__icon">S</span>
-          <span class="logo__text">ShopeeClone</span>
+          <span class="logo__icon">H</span>
+          <span class="logo__text">Hưng Store</span>
         </RouterLink>
 
         <form class="search" @submit.prevent="search">
           <input v-model="keyword" type="text" placeholder="Tìm kiếm sản phẩm..." />
-          <button type="submit" aria-label="Tìm kiếm">🔍</button>
+          <button type="submit" aria-label="Tìm kiếm"><AppIcon name="search" :size="18" /></button>
         </form>
 
         <NotificationBell v-if="authStore.isAuthenticated && !authStore.isAdmin" />
 
-        <RouterLink v-if="authStore.isAuthenticated && !authStore.isAdmin" to="/wishlist" class="wishlist">
-          ❤️
-          <span v-if="wishlistStore.itemCount > 0" class="wishlist__badge">{{ wishlistStore.itemCount }}</span>
+        <RouterLink v-if="authStore.isAuthenticated && !authStore.isAdmin" to="/wishlist" class="icon-link">
+          <AppIcon name="heart" :size="22" :filled="wishlistStore.itemCount > 0" />
+          <span v-if="wishlistStore.itemCount > 0" class="icon-link__badge">{{ wishlistStore.itemCount }}</span>
         </RouterLink>
 
-        <RouterLink to="/cart" class="cart">
-          🛒
-          <span v-if="cartStore.itemCount > 0" class="cart__badge">{{ cartStore.itemCount }}</span>
+        <RouterLink to="/cart" class="icon-link">
+          <AppIcon name="cart" :size="22" />
+          <span v-if="cartStore.itemCount > 0" class="icon-link__badge">{{ cartStore.itemCount }}</span>
         </RouterLink>
       </div>
     </div>
@@ -88,18 +89,23 @@ function logout() {
 
 <style scoped>
 .app-header {
-  background: var(--gradient-header);
+  background: var(--surface);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: var(--shadow-sm);
 }
 
 .utility-bar {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
 }
 
 .utility-bar__inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 6px 16px;
+  padding: 7px 16px;
   display: flex;
   justify-content: space-between;
 }
@@ -107,7 +113,7 @@ function logout() {
 .utility-bar__left,
 .utility-bar__right {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   align-items: center;
 }
 
@@ -117,14 +123,18 @@ function logout() {
   cursor: pointer;
 }
 
+.utility-bar__right a:hover {
+  color: var(--shopee-orange);
+}
+
 .divider {
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .main-bar__inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 12px 16px 18px;
+  padding: 14px 16px;
   display: flex;
   align-items: center;
   gap: 24px;
@@ -133,18 +143,18 @@ function logout() {
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
   text-decoration: none;
-  color: #fff;
+  color: var(--text);
   flex-shrink: 0;
 }
 
 .logo__icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: #fff;
-  color: var(--shopee-orange);
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-md);
+  background: var(--shopee-orange);
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -153,22 +163,30 @@ function logout() {
 }
 
 .logo__text {
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .search {
   flex: 1;
   display: flex;
-  background: #fff;
-  border-radius: 2px;
+  background: var(--bg-page);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
   overflow: hidden;
+}
+
+.search:focus-within {
+  border-color: var(--shopee-orange);
+  background: var(--surface);
 }
 
 .search input {
   flex: 1;
   border: none;
-  padding: 10px 12px;
+  background: transparent;
+  padding: 10px 14px;
   outline: none;
   font-size: 14px;
 }
@@ -177,31 +195,40 @@ function logout() {
   border: none;
   background: var(--shopee-orange);
   color: #fff;
-  padding: 0 20px;
-  font-size: 16px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
 }
 
-.cart,
-.wishlist {
+.search button:hover {
+  background: var(--shopee-orange-dark);
+}
+
+.icon-link {
   position: relative;
-  color: #fff;
-  font-size: 24px;
+  color: var(--text);
   flex-shrink: 0;
   text-decoration: none;
+  display: flex;
 }
 
-.cart__badge,
-.wishlist__badge {
-  position: absolute;
-  top: -8px;
-  right: -10px;
-  background: #fff;
+.icon-link:hover {
   color: var(--shopee-orange);
+}
+
+.icon-link__badge {
+  position: absolute;
+  top: -7px;
+  right: -9px;
+  background: var(--shopee-orange);
+  color: #fff;
   font-size: 11px;
   font-weight: 700;
   border-radius: 10px;
-  padding: 1px 6px;
-  line-height: 1.4;
+  padding: 1px 5px;
+  min-width: 16px;
+  text-align: center;
+  line-height: 1.5;
 }
 
 @media (max-width: 768px) {
@@ -211,7 +238,7 @@ function logout() {
 
   .main-bar__inner {
     gap: 12px;
-    padding: 10px 12px 14px;
+    padding: 10px 12px;
   }
 
   .logo__text {
@@ -221,11 +248,6 @@ function logout() {
   .search input {
     padding: 8px 10px;
     font-size: 13px;
-  }
-
-  .cart,
-  .wishlist {
-    font-size: 20px;
   }
 }
 

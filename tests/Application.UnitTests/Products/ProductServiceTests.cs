@@ -1,12 +1,12 @@
 using FluentAssertions;
 using Moq;
-using ShopeeClone.Application.Products;
-using ShopeeClone.Application.Products.Dtos;
-using ShopeeClone.Application.Products.Interfaces;
-using ShopeeClone.Domain.Entities;
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Application.Products;
+using HungStore.Application.Products.Dtos;
+using HungStore.Application.Products.Interfaces;
+using HungStore.Domain.Entities;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Application.UnitTests.Products;
+namespace HungStore.Application.UnitTests.Products;
 
 public class ProductServiceTests
 {

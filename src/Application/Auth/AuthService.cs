@@ -1,9 +1,9 @@
-using ShopeeClone.Application.Auth.Dtos;
-using ShopeeClone.Application.Auth.Interfaces;
-using ShopeeClone.Application.Common;
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Application.Auth.Dtos;
+using HungStore.Application.Auth.Interfaces;
+using HungStore.Application.Common;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Application.Auth;
+namespace HungStore.Application.Auth;
 
 public class AuthService : IAuthService
 {

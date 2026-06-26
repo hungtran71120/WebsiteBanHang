@@ -1,6 +1,6 @@
-using ShopeeClone.Application.Notifications.Dtos;
+using HungStore.Application.Notifications.Dtos;
 
-namespace ShopeeClone.Application.Notifications.Interfaces;
+namespace HungStore.Application.Notifications.Interfaces;
 
 public interface INotificationPusher
 {

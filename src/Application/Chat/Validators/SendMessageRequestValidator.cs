@@ -1,7 +1,7 @@
 using FluentValidation;
-using ShopeeClone.Application.Chat.Dtos;
+using HungStore.Application.Chat.Dtos;
 
-namespace ShopeeClone.Application.Chat.Validators;
+namespace HungStore.Application.Chat.Validators;
 
 public class SendMessageRequestValidator : AbstractValidator<SendMessageRequest>
 {

@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.SignalR;
-using ShopeeClone.Application.Chat.Dtos;
-using ShopeeClone.Application.Chat.Interfaces;
+using HungStore.Application.Chat.Dtos;
+using HungStore.Application.Chat.Interfaces;
 
-namespace ShopeeClone.API.Hubs;
+namespace HungStore.API.Hubs;
 
 public class SignalRChatNotifier : IChatNotifier
 {

@@ -1,7 +1,7 @@
 using FluentValidation;
-using ShopeeClone.Application.Reviews.Dtos;
+using HungStore.Application.Reviews.Dtos;
 
-namespace ShopeeClone.Application.Reviews.Validators;
+namespace HungStore.Application.Reviews.Validators;
 
 public class UpdateReviewRequestValidator : AbstractValidator<UpdateReviewRequest>
 {

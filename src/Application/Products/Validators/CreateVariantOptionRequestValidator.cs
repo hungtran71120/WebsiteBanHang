@@ -1,7 +1,7 @@
 using FluentValidation;
-using ShopeeClone.Application.Products.Dtos;
+using HungStore.Application.Products.Dtos;
 
-namespace ShopeeClone.Application.Products.Validators;
+namespace HungStore.Application.Products.Validators;
 
 public class CreateVariantOptionRequestValidator : AbstractValidator<CreateVariantOptionRequest>
 {

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import AppIcon from './icons/AppIcon.vue'
 import { useAuthStore } from '../stores/auth'
 
 const route = useRoute()
@@ -15,7 +16,10 @@ const avatarInitial = computed(() => authStore.user?.fullName?.trim().charAt(0).
       <div class="account-sidebar__avatar">{{ avatarInitial }}</div>
       <div class="account-sidebar__info">
         <p class="account-sidebar__name line-clamp-2">{{ authStore.user?.fullName }}</p>
-        <RouterLink to="/account/profile" class="account-sidebar__edit">✎ Sửa Hồ Sơ</RouterLink>
+        <RouterLink to="/account/profile" class="account-sidebar__edit">
+          <AppIcon name="edit" :size="13" />
+          Sửa Hồ Sơ
+        </RouterLink>
       </div>
     </div>
 
@@ -42,7 +46,10 @@ const avatarInitial = computed(() => authStore.user?.fullName?.trim().charAt(0).
 <style scoped>
 .account-sidebar {
   flex: 0 0 220px;
-  background: #fff;
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  align-self: flex-start;
 }
 
 @media (max-width: 768px) {

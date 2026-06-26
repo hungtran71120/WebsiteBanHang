@@ -107,6 +107,11 @@ const router = createRouter({
           component: () => import('../views/admin/AdminFlashSalesView.vue'),
         },
         {
+          path: 'banners',
+          name: 'admin-banners',
+          component: () => import('../views/admin/AdminBannersView.vue'),
+        },
+        {
           path: 'users',
           name: 'admin-users',
           component: () => import('../views/admin/AdminUsersView.vue'),

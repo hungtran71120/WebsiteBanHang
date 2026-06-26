@@ -1,10 +1,10 @@
-using ShopeeClone.Application.Categories.Dtos;
-using ShopeeClone.Application.Categories.Interfaces;
-using ShopeeClone.Application.Common;
-using ShopeeClone.Domain.Entities;
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Application.Categories.Dtos;
+using HungStore.Application.Categories.Interfaces;
+using HungStore.Application.Common;
+using HungStore.Domain.Entities;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Application.Categories;
+namespace HungStore.Application.Categories;
 
 public class CategoryService : ICategoryService
 {

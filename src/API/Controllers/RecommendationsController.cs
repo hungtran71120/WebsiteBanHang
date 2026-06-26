@@ -1,8 +1,8 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
-using ShopeeClone.Application.Recommendations.Interfaces;
+using HungStore.Application.Recommendations.Interfaces;
 
-namespace ShopeeClone.API.Controllers;
+namespace HungStore.API.Controllers;
 
 [ApiController]
 [Route("api/recommendations")]

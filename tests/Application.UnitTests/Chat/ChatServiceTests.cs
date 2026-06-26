@@ -1,12 +1,12 @@
 using FluentAssertions;
 using Moq;
-using ShopeeClone.Application.Chat;
-using ShopeeClone.Application.Chat.Dtos;
-using ShopeeClone.Application.Chat.Interfaces;
-using ShopeeClone.Domain.Entities;
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Application.Chat;
+using HungStore.Application.Chat.Dtos;
+using HungStore.Application.Chat.Interfaces;
+using HungStore.Domain.Entities;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Application.UnitTests.Chat;
+namespace HungStore.Application.UnitTests.Chat;
 
 public class ChatServiceTests
 {

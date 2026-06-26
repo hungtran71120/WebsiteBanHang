@@ -1,9 +1,9 @@
 ---
 name: verify-phase
-description: This skill should be used when the user asks to "verify the phase", "check if the phase is done", "check Definition of Done", "verify phase", "kiểm tra phase đã xong chưa" in the ShopeeClone project, typically before marking a phase complete in PROGRESS.md.
+description: This skill should be used when the user asks to "verify the phase", "check if the phase is done", "check Definition of Done", "verify phase", "kiểm tra phase đã xong chưa" in the HungStore project, typically before marking a phase complete in PROGRESS.md.
 ---
 
-Verify that the current phase of the ShopeeClone project (`E:\ProjectVuiVe\WebSiteBanHang`) meets the Definition of Done stated in `CLAUDE.md` section 5: the feature runs end-to-end, has tests, and `PROGRESS.md` is updated.
+Verify that the current phase of the HungStore project (`E:\ProjectVuiVe\WebSiteBanHang`) meets the Definition of Done stated in `CLAUDE.md` section 5: the feature runs end-to-end, has tests, and `PROGRESS.md` is updated.
 
 ## Step 1 — Run checks in order, from the repo root
 

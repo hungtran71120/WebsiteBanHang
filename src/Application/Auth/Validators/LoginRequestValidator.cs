@@ -1,7 +1,7 @@
 using FluentValidation;
-using ShopeeClone.Application.Auth.Dtos;
+using HungStore.Application.Auth.Dtos;
 
-namespace ShopeeClone.Application.Auth.Validators;
+namespace HungStore.Application.Auth.Validators;
 
 public class LoginRequestValidator : AbstractValidator<LoginRequest>
 {

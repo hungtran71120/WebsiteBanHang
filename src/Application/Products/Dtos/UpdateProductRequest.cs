@@ -1,4 +1,4 @@
-namespace ShopeeClone.Application.Products.Dtos;
+namespace HungStore.Application.Products.Dtos;
 
 public class UpdateProductRequest
 {

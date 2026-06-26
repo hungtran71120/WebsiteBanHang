@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace ShopeeClone.Infrastructure.Persistence.Migrations
+namespace HungStore.Infrastructure.Persistence.Migrations
 {
     /// <inheritdoc />
     public partial class InitialIdentitySchema : Migration

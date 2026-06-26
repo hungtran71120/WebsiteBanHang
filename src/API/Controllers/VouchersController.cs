@@ -2,11 +2,11 @@ using System.Security.Claims;
 using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ShopeeClone.Application.Cart.Interfaces;
-using ShopeeClone.Application.Vouchers.Dtos;
-using ShopeeClone.Application.Vouchers.Interfaces;
+using HungStore.Application.Cart.Interfaces;
+using HungStore.Application.Vouchers.Dtos;
+using HungStore.Application.Vouchers.Interfaces;
 
-namespace ShopeeClone.API.Controllers;
+namespace HungStore.API.Controllers;
 
 [ApiController]
 [Route("api/vouchers")]

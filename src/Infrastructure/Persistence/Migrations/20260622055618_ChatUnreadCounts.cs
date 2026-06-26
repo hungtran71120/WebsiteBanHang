@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace ShopeeClone.Infrastructure.Persistence.Migrations
+namespace HungStore.Infrastructure.Persistence.Migrations
 {
     /// <inheritdoc />
     public partial class ChatUnreadCounts : Migration

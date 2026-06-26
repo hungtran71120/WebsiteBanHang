@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
+import AppIcon from './icons/AppIcon.vue'
 import { useChatStore } from '../stores/chat'
 
 const chatStore = useChatStore()
@@ -61,7 +62,7 @@ function formatTime(value: string) {
     <div v-if="isOpen" class="chat-panel">
       <header class="chat-panel-header">
         <span>Chat với Shop</span>
-        <button type="button" class="chat-close-btn" @click="toggleOpen">×</button>
+        <button type="button" class="chat-close-btn" @click="toggleOpen"><AppIcon name="x" :size="16" /></button>
       </header>
       <div ref="messagesEl" class="chat-messages">
         <p v-if="isLoading" class="chat-hint">Đang tải...</p>
@@ -83,7 +84,7 @@ function formatTime(value: string) {
     </div>
     <button type="button" class="chat-bubble-btn" @click="toggleOpen">
       <span v-if="unreadCount > 0 && !isOpen" class="chat-unread-badge">{{ unreadCount > 9 ? '9+' : unreadCount }}</span>
-      💬
+      <AppIcon name="chat" :size="24" />
     </button>
   </div>
 </template>
@@ -104,9 +105,15 @@ function formatTime(value: string) {
   border: none;
   background: var(--shopee-orange);
   color: #fff;
-  font-size: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
   cursor: pointer;
+}
+
+.chat-bubble-btn:hover {
+  background: var(--shopee-orange-dark);
 }
 
 .chat-unread-badge {
@@ -134,9 +141,9 @@ function formatTime(value: string) {
   bottom: 68px;
   width: 320px;
   height: 420px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
   display: flex;
   flex-direction: column;
   overflow: hidden;

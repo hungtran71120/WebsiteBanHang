@@ -1,4 +1,4 @@
-namespace ShopeeClone.Domain.Interfaces;
+namespace HungStore.Domain.Interfaces;
 
 public enum ProductSortBy
 {

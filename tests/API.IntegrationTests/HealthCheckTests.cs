@@ -2,7 +2,7 @@ using System.Net;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.Testing;
 
-namespace ShopeeClone.API.IntegrationTests;
+namespace HungStore.API.IntegrationTests;
 
 public class HealthCheckTests : IClassFixture<WebApplicationFactory<Program>>
 {

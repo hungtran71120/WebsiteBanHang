@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using ShopeeClone.Infrastructure.Identity;
+using HungStore.Infrastructure.Identity;
 
-namespace ShopeeClone.Infrastructure.Persistence;
+namespace HungStore.Infrastructure.Persistence;
 
 public static class SeedData
 {

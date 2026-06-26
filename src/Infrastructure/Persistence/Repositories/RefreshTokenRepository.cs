@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using ShopeeClone.Domain.Entities;
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Domain.Entities;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Infrastructure.Persistence.Repositories;
+namespace HungStore.Infrastructure.Persistence.Repositories;
 
 public class RefreshTokenRepository : IRefreshTokenRepository
 {

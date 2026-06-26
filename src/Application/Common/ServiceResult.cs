@@ -1,4 +1,4 @@
-namespace ShopeeClone.Application.Common;
+namespace HungStore.Application.Common;
 
 public class ServiceResult<T>
 {

@@ -259,7 +259,7 @@ h1 {
   border: none;
   padding: 12px 40px;
   font-size: 15px;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .skeleton-thumb {

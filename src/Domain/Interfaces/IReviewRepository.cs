@@ -1,6 +1,6 @@
-using ShopeeClone.Domain.Entities;
+using HungStore.Domain.Entities;
 
-namespace ShopeeClone.Domain.Interfaces;
+namespace HungStore.Domain.Interfaces;
 
 public interface IReviewRepository
 {

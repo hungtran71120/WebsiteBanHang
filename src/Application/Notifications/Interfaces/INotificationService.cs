@@ -1,8 +1,8 @@
-using ShopeeClone.Application.Common;
-using ShopeeClone.Application.Notifications.Dtos;
-using ShopeeClone.Domain.Enums;
+using HungStore.Application.Common;
+using HungStore.Application.Notifications.Dtos;
+using HungStore.Domain.Enums;
 
-namespace ShopeeClone.Application.Notifications.Interfaces;
+namespace HungStore.Application.Notifications.Interfaces;
 
 public interface INotificationService
 {

@@ -1,4 +1,4 @@
-namespace ShopeeClone.Application.Reviews.Dtos;
+namespace HungStore.Application.Reviews.Dtos;
 
 public class ReviewDto
 {

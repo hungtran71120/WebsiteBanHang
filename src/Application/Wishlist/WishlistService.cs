@@ -1,10 +1,10 @@
-using ShopeeClone.Application.Common;
-using ShopeeClone.Application.Wishlist.Dtos;
-using ShopeeClone.Application.Wishlist.Interfaces;
-using ShopeeClone.Domain.Entities;
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Application.Common;
+using HungStore.Application.Wishlist.Dtos;
+using HungStore.Application.Wishlist.Interfaces;
+using HungStore.Domain.Entities;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Application.Wishlist;
+namespace HungStore.Application.Wishlist;
 
 public class WishlistService : IWishlistService
 {

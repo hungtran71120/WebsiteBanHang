@@ -2,10 +2,10 @@ using System.Security.Claims;
 using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ShopeeClone.Application.Reviews.Dtos;
-using ShopeeClone.Application.Reviews.Interfaces;
+using HungStore.Application.Reviews.Dtos;
+using HungStore.Application.Reviews.Interfaces;
 
-namespace ShopeeClone.API.Controllers;
+namespace HungStore.API.Controllers;
 
 [ApiController]
 [Route("api")]

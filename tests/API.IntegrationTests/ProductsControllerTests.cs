@@ -2,10 +2,10 @@ using System.Net;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using FluentAssertions;
-using ShopeeClone.Application.Categories.Dtos;
-using ShopeeClone.Application.Products.Dtos;
+using HungStore.Application.Categories.Dtos;
+using HungStore.Application.Products.Dtos;
 
-namespace ShopeeClone.API.IntegrationTests;
+namespace HungStore.API.IntegrationTests;
 
 [Collection(IntegrationTestCollection.Name)]
 public class ProductsControllerTests

@@ -2,10 +2,10 @@ using System.Security.Claims;
 using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ShopeeClone.Application.Chat.Dtos;
-using ShopeeClone.Application.Chat.Interfaces;
+using HungStore.Application.Chat.Dtos;
+using HungStore.Application.Chat.Interfaces;
 
-namespace ShopeeClone.API.Controllers;
+namespace HungStore.API.Controllers;
 
 [ApiController]
 [Route("api/chat")]

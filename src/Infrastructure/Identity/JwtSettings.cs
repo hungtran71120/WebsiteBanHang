@@ -1,4 +1,4 @@
-namespace ShopeeClone.Infrastructure.Identity;
+namespace HungStore.Infrastructure.Identity;
 
 public class JwtSettings
 {

@@ -1,7 +1,7 @@
-using ShopeeClone.Application.Auth.Dtos;
-using ShopeeClone.Domain.Entities;
+using HungStore.Application.Auth.Dtos;
+using HungStore.Domain.Entities;
 
-namespace ShopeeClone.Application.Auth.Interfaces;
+namespace HungStore.Application.Auth.Interfaces;
 
 public interface ITokenService
 {

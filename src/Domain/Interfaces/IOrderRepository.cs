@@ -1,7 +1,7 @@
-using ShopeeClone.Domain.Entities;
-using ShopeeClone.Domain.Enums;
+using HungStore.Domain.Entities;
+using HungStore.Domain.Enums;
 
-namespace ShopeeClone.Domain.Interfaces;
+namespace HungStore.Domain.Interfaces;
 
 public interface IOrderRepository
 {

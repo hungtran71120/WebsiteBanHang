@@ -2,9 +2,9 @@ using MailKit.Net.Smtp;
 using MailKit.Security;
 using Microsoft.Extensions.Options;
 using MimeKit;
-using ShopeeClone.Application.Notifications.Interfaces;
+using HungStore.Application.Notifications.Interfaces;
 
-namespace ShopeeClone.Infrastructure.Email;
+namespace HungStore.Infrastructure.Email;
 
 public class SmtpEmailSender : IEmailSender
 {

@@ -1,7 +1,7 @@
 using FluentValidation;
-using ShopeeClone.Application.Users.Dtos;
+using HungStore.Application.Users.Dtos;
 
-namespace ShopeeClone.Application.Users.Validators;
+namespace HungStore.Application.Users.Validators;
 
 public class UpdateProfileRequestValidator : AbstractValidator<UpdateProfileRequest>
 {

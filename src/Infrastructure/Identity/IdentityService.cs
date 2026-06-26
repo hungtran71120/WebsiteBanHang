@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using ShopeeClone.Application.Auth.Dtos;
-using ShopeeClone.Application.Auth.Interfaces;
+using HungStore.Application.Auth.Dtos;
+using HungStore.Application.Auth.Interfaces;
 
-namespace ShopeeClone.Infrastructure.Identity;
+namespace HungStore.Infrastructure.Identity;
 
 public class IdentityService : IIdentityService
 {

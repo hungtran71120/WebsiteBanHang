@@ -1,7 +1,7 @@
-using ShopeeClone.Application.Cart.Dtos;
-using ShopeeClone.Application.Common;
+using HungStore.Application.Cart.Dtos;
+using HungStore.Application.Common;
 
-namespace ShopeeClone.Application.Cart.Interfaces;
+namespace HungStore.Application.Cart.Interfaces;
 
 public interface ICartService
 {

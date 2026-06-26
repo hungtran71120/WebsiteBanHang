@@ -1,11 +1,11 @@
 using FluentAssertions;
 using Moq;
-using ShopeeClone.Application.FlashSales;
-using ShopeeClone.Application.FlashSales.Dtos;
-using ShopeeClone.Domain.Entities;
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Application.FlashSales;
+using HungStore.Application.FlashSales.Dtos;
+using HungStore.Domain.Entities;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Application.UnitTests.FlashSales;
+namespace HungStore.Application.UnitTests.FlashSales;
 
 public class FlashSaleServiceTests
 {

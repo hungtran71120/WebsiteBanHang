@@ -1,6 +1,6 @@
-using ShopeeClone.Application.Auth.Dtos;
+using HungStore.Application.Auth.Dtos;
 
-namespace ShopeeClone.Application.Auth.Interfaces;
+namespace HungStore.Application.Auth.Interfaces;
 
 public interface IIdentityService
 {

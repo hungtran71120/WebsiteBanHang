@@ -1,7 +1,7 @@
 using FluentValidation;
-using ShopeeClone.Application.Categories.Dtos;
+using HungStore.Application.Categories.Dtos;
 
-namespace ShopeeClone.Application.Categories.Validators;
+namespace HungStore.Application.Categories.Validators;
 
 public class UpdateCategoryRequestValidator : AbstractValidator<UpdateCategoryRequest>
 {

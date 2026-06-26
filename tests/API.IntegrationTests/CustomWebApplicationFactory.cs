@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ShopeeClone.Infrastructure.Persistence;
+using HungStore.Infrastructure.Persistence;
 
-namespace ShopeeClone.API.IntegrationTests;
+namespace HungStore.API.IntegrationTests;
 
 public class CustomWebApplicationFactory : WebApplicationFactory<Program>
 {

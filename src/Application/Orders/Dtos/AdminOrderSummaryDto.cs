@@ -1,4 +1,4 @@
-namespace ShopeeClone.Application.Orders.Dtos;
+namespace HungStore.Application.Orders.Dtos;
 
 public class AdminOrderSummaryDto
 {

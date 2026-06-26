@@ -1,4 +1,4 @@
-namespace ShopeeClone.Application.Auth.Dtos;
+namespace HungStore.Application.Auth.Dtos;
 
 public class RegisterRequest
 {

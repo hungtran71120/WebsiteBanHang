@@ -1,11 +1,11 @@
-using ShopeeClone.Application.Auth.Interfaces;
-using ShopeeClone.Application.Common;
-using ShopeeClone.Application.Reviews.Dtos;
-using ShopeeClone.Application.Reviews.Interfaces;
-using ShopeeClone.Domain.Entities;
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Application.Auth.Interfaces;
+using HungStore.Application.Common;
+using HungStore.Application.Reviews.Dtos;
+using HungStore.Application.Reviews.Interfaces;
+using HungStore.Domain.Entities;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Application.Reviews;
+namespace HungStore.Application.Reviews;
 
 public class ReviewService : IReviewService
 {

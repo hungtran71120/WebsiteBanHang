@@ -1,4 +1,4 @@
-namespace ShopeeClone.Application.Vouchers.Dtos;
+namespace HungStore.Application.Vouchers.Dtos;
 
 public class VoucherValidationResultDto
 {

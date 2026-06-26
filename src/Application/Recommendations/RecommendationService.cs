@@ -1,10 +1,10 @@
-using ShopeeClone.Application.Products;
-using ShopeeClone.Application.Products.Dtos;
-using ShopeeClone.Application.Recommendations.Interfaces;
-using ShopeeClone.Domain.Entities;
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Application.Products;
+using HungStore.Application.Products.Dtos;
+using HungStore.Application.Recommendations.Interfaces;
+using HungStore.Domain.Entities;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Application.Recommendations;
+namespace HungStore.Application.Recommendations;
 
 public class RecommendationService : IRecommendationService
 {

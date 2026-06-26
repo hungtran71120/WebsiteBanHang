@@ -1,12 +1,12 @@
 using FluentAssertions;
 using Moq;
-using ShopeeClone.Application.Auth;
-using ShopeeClone.Application.Auth.Dtos;
-using ShopeeClone.Application.Auth.Interfaces;
-using ShopeeClone.Domain.Entities;
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Application.Auth;
+using HungStore.Application.Auth.Dtos;
+using HungStore.Application.Auth.Interfaces;
+using HungStore.Domain.Entities;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Application.UnitTests.Auth;
+namespace HungStore.Application.UnitTests.Auth;
 
 public class AuthServiceTests
 {

@@ -1,8 +1,8 @@
-using ShopeeClone.Application.Auth.Dtos;
-using ShopeeClone.Application.Common;
-using ShopeeClone.Application.Users.Dtos;
+using HungStore.Application.Auth.Dtos;
+using HungStore.Application.Common;
+using HungStore.Application.Users.Dtos;
 
-namespace ShopeeClone.Application.Users.Interfaces;
+namespace HungStore.Application.Users.Interfaces;
 
 public interface IUserService
 {

@@ -1,7 +1,7 @@
 using System.Net;
 using System.Text.Json;
 
-namespace ShopeeClone.API.Middleware;
+namespace HungStore.API.Middleware;
 
 public class ExceptionHandlingMiddleware
 {

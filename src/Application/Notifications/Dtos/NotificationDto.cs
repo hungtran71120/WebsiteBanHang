@@ -1,4 +1,4 @@
-namespace ShopeeClone.Application.Notifications.Dtos;
+namespace HungStore.Application.Notifications.Dtos;
 
 public class NotificationDto
 {

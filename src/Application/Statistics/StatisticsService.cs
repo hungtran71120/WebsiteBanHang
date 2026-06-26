@@ -1,10 +1,10 @@
-using ShopeeClone.Application.Auth.Interfaces;
-using ShopeeClone.Application.Statistics.Dtos;
-using ShopeeClone.Application.Statistics.Interfaces;
-using ShopeeClone.Domain.Enums;
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Application.Auth.Interfaces;
+using HungStore.Application.Statistics.Dtos;
+using HungStore.Application.Statistics.Interfaces;
+using HungStore.Domain.Enums;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Application.Statistics;
+namespace HungStore.Application.Statistics;
 
 public class StatisticsService : IStatisticsService
 {

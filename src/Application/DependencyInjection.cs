@@ -1,36 +1,38 @@
 using System.Reflection;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
-using ShopeeClone.Application.Auth;
-using ShopeeClone.Application.Auth.Interfaces;
-using ShopeeClone.Application.Cart;
-using ShopeeClone.Application.Cart.Interfaces;
-using ShopeeClone.Application.Categories;
-using ShopeeClone.Application.Chat;
-using ShopeeClone.Application.Chat.Interfaces;
-using ShopeeClone.Application.Categories.Interfaces;
-using ShopeeClone.Application.FlashSales;
-using ShopeeClone.Application.FlashSales.Interfaces;
-using ShopeeClone.Application.Notifications;
-using ShopeeClone.Application.Notifications.Interfaces;
-using ShopeeClone.Application.Orders;
-using ShopeeClone.Application.Orders.Interfaces;
-using ShopeeClone.Application.Products;
-using ShopeeClone.Application.Products.Interfaces;
-using ShopeeClone.Application.Recommendations;
-using ShopeeClone.Application.Recommendations.Interfaces;
-using ShopeeClone.Application.Reviews;
-using ShopeeClone.Application.Reviews.Interfaces;
-using ShopeeClone.Application.Statistics;
-using ShopeeClone.Application.Statistics.Interfaces;
-using ShopeeClone.Application.Users;
-using ShopeeClone.Application.Users.Interfaces;
-using ShopeeClone.Application.Vouchers;
-using ShopeeClone.Application.Vouchers.Interfaces;
-using ShopeeClone.Application.Wishlist;
-using ShopeeClone.Application.Wishlist.Interfaces;
+using HungStore.Application.Auth;
+using HungStore.Application.Auth.Interfaces;
+using HungStore.Application.Banners;
+using HungStore.Application.Banners.Interfaces;
+using HungStore.Application.Cart;
+using HungStore.Application.Cart.Interfaces;
+using HungStore.Application.Categories;
+using HungStore.Application.Chat;
+using HungStore.Application.Chat.Interfaces;
+using HungStore.Application.Categories.Interfaces;
+using HungStore.Application.FlashSales;
+using HungStore.Application.FlashSales.Interfaces;
+using HungStore.Application.Notifications;
+using HungStore.Application.Notifications.Interfaces;
+using HungStore.Application.Orders;
+using HungStore.Application.Orders.Interfaces;
+using HungStore.Application.Products;
+using HungStore.Application.Products.Interfaces;
+using HungStore.Application.Recommendations;
+using HungStore.Application.Recommendations.Interfaces;
+using HungStore.Application.Reviews;
+using HungStore.Application.Reviews.Interfaces;
+using HungStore.Application.Statistics;
+using HungStore.Application.Statistics.Interfaces;
+using HungStore.Application.Users;
+using HungStore.Application.Users.Interfaces;
+using HungStore.Application.Vouchers;
+using HungStore.Application.Vouchers.Interfaces;
+using HungStore.Application.Wishlist;
+using HungStore.Application.Wishlist.Interfaces;
 
-namespace ShopeeClone.Application;
+namespace HungStore.Application;
 
 public static class DependencyInjection
 {
@@ -52,6 +54,7 @@ public static class DependencyInjection
         services.AddScoped<IRecommendationService, RecommendationService>();
         services.AddScoped<IVoucherService, VoucherService>();
         services.AddScoped<IFlashSaleService, FlashSaleService>();
+        services.AddScoped<IBannerService, BannerService>();
 
         return services;
     }

@@ -1,10 +1,10 @@
 using FluentAssertions;
 using Moq;
-using ShopeeClone.Application.Recommendations;
-using ShopeeClone.Domain.Entities;
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Application.Recommendations;
+using HungStore.Domain.Entities;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Application.UnitTests.Recommendations;
+namespace HungStore.Application.UnitTests.Recommendations;
 
 public class RecommendationServiceTests
 {

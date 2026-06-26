@@ -1,4 +1,4 @@
-namespace ShopeeClone.Application.Wishlist.Dtos;
+namespace HungStore.Application.Wishlist.Dtos;
 
 public class WishlistDto
 {

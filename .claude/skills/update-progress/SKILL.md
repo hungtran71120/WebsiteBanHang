@@ -1,9 +1,9 @@
 ---
 name: update-progress
-description: This skill should be used when the user asks to "update PROGRESS.md", "mark phase X as done", "ghi tiến độ", "cập nhật PROGRESS.md", "đánh dấu hoàn thành phase X" in the ShopeeClone project.
+description: This skill should be used when the user asks to "update PROGRESS.md", "mark phase X as done", "ghi tiến độ", "cập nhật PROGRESS.md", "đánh dấu hoàn thành phase X" in the HungStore project.
 ---
 
-Update `PROGRESS.md` in the ShopeeClone project (`E:\ProjectVuiVe\WebSiteBanHang`) to reflect actual progress, following the exact format already established in the file — use the completed Phase 0 section as the canonical example of formatting.
+Update `PROGRESS.md` in the HungStore project (`E:\ProjectVuiVe\WebSiteBanHang`) to reflect actual progress, following the exact format already established in the file — use the completed Phase 0 section as the canonical example of formatting.
 
 ## What to update
 

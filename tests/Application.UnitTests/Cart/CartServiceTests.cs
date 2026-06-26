@@ -1,11 +1,11 @@
 using FluentAssertions;
 using Moq;
-using ShopeeClone.Application.Cart;
-using ShopeeClone.Application.Cart.Dtos;
-using ShopeeClone.Domain.Entities;
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Application.Cart;
+using HungStore.Application.Cart.Dtos;
+using HungStore.Domain.Entities;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Application.UnitTests.Cart;
+namespace HungStore.Application.UnitTests.Cart;
 
 public class CartServiceTests
 {

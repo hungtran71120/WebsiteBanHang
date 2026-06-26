@@ -1,7 +1,7 @@
 using FluentValidation;
-using ShopeeClone.Application.Orders.Dtos;
+using HungStore.Application.Orders.Dtos;
 
-namespace ShopeeClone.Application.Orders.Validators;
+namespace HungStore.Application.Orders.Validators;
 
 public class CreateOrderRequestValidator : AbstractValidator<CreateOrderRequest>
 {

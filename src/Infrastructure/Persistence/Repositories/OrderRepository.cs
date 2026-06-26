@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using ShopeeClone.Domain.Entities;
-using ShopeeClone.Domain.Enums;
-using ShopeeClone.Domain.Interfaces;
+using HungStore.Domain.Entities;
+using HungStore.Domain.Enums;
+using HungStore.Domain.Interfaces;
 
-namespace ShopeeClone.Infrastructure.Persistence.Repositories;
+namespace HungStore.Infrastructure.Persistence.Repositories;
 
 public class OrderRepository : IOrderRepository
 {

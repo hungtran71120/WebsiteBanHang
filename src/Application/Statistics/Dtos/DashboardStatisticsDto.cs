@@ -1,4 +1,4 @@
-namespace ShopeeClone.Application.Statistics.Dtos;
+namespace HungStore.Application.Statistics.Dtos;
 
 public class DashboardStatisticsDto
 {

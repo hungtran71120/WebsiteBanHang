@@ -1,4 +1,4 @@
-namespace ShopeeClone.Application.Categories.Dtos;
+namespace HungStore.Application.Categories.Dtos;
 
 public class CategoryDto
 {

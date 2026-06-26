@@ -1,6 +1,6 @@
-using ShopeeClone.Application.Chat.Dtos;
+using HungStore.Application.Chat.Dtos;
 
-namespace ShopeeClone.Application.Chat.Interfaces;
+namespace HungStore.Application.Chat.Interfaces;
 
 public interface IChatNotifier
 {

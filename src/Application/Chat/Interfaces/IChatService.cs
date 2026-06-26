@@ -1,7 +1,7 @@
-using ShopeeClone.Application.Chat.Dtos;
-using ShopeeClone.Application.Common;
+using HungStore.Application.Chat.Dtos;
+using HungStore.Application.Common;
 
-namespace ShopeeClone.Application.Chat.Interfaces;
+namespace HungStore.Application.Chat.Interfaces;
 
 public interface IChatService
 {

@@ -1,7 +1,7 @@
-using ShopeeClone.Application.Common;
-using ShopeeClone.Application.Reviews.Dtos;
+using HungStore.Application.Common;
+using HungStore.Application.Reviews.Dtos;
 
-namespace ShopeeClone.Application.Reviews.Interfaces;
+namespace HungStore.Application.Reviews.Interfaces;
 
 public interface IReviewService
 {

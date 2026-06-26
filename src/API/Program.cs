@@ -1,13 +1,13 @@
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.OpenApi;
-using ShopeeClone.API.Hubs;
-using ShopeeClone.API.Middleware;
-using ShopeeClone.Application;
-using ShopeeClone.Application.Chat.Interfaces;
-using ShopeeClone.Application.Notifications.Interfaces;
-using ShopeeClone.Infrastructure;
-using ShopeeClone.Infrastructure.Persistence;
+using HungStore.API.Hubs;
+using HungStore.API.Middleware;
+using HungStore.Application;
+using HungStore.Application.Chat.Interfaces;
+using HungStore.Application.Notifications.Interfaces;
+using HungStore.Infrastructure;
+using HungStore.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,7 +32,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("v1", new OpenApiInfo { Title = "ShopeeClone API", Version = "v1" });
+    options.SwaggerDoc("v1", new OpenApiInfo { Title = "HungStore API", Version = "v1" });
 
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {

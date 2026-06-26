@@ -102,7 +102,7 @@ async function submit() {
   width: 100%;
   max-width: 380px;
   padding: 32px;
-  border-radius: 4px;
+  border-radius: var(--radius-md);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
@@ -129,7 +129,7 @@ label {
 input {
   padding: 10px 12px;
   border: 1px solid var(--border);
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
   width: 100%;
 }
 
@@ -159,7 +159,7 @@ input::-ms-clear {
   justify-content: center;
   background: none;
   border: none;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
   padding: 0;
   color: var(--text-secondary);
 }
@@ -178,7 +178,7 @@ button[type='submit'] {
   background: var(--shopee-orange);
   color: #fff;
   border: none;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
   padding: 10px 0;
   font-size: 14px;
 }

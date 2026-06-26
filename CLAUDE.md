@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Tài liệu định hướng cho dự án **Shopee Clone** (single-vendor e-commerce). Đọc file này trước khi bắt đầu bất kỳ session làm việc nào — nó chứa các quyết định đã chốt để không phải hỏi lại.
+Tài liệu định hướng cho dự án **Hưng Store** (single-vendor e-commerce). Đọc file này trước khi bắt đầu bất kỳ session làm việc nào — nó chứa các quyết định đã chốt để không phải hỏi lại.
 
 ## 1. Tổng quan dự án
 
@@ -64,7 +64,7 @@ Website thương mại điện tử single-vendor lấy cảm hứng từ Shopee
 |---|---|
 | Mô hình kinh doanh | Single-vendor — 1 Admin quản lý toàn bộ sản phẩm, không có Seller/marketplace |
 | Thanh toán | Giả lập (mock checkout — COD hoặc đánh dấu "đã thanh toán" giả). Không tích hợp cổng thanh toán thật ở giai đoạn này |
-| Lưu ảnh | Local `wwwroot/uploads`, không dùng cloud storage |
+| Lưu ảnh | Local `wwwroot/uploads` khi dev; Azure Blob Storage khi deploy production (chọn tự động qua `Storage:AzureBlob:ConnectionString` — rỗng thì dùng Local, có giá trị thì dùng Blob) |
 | Docker | Không dùng, chạy trực tiếp local |
 | Testing | Bắt buộc viết unit test + integration test cho mọi phase, không được bỏ qua để "làm nhanh" |
 | Admin Dashboard | Cùng 1 Vue app với route `/admin`, không tách project riêng |
@@ -134,8 +134,8 @@ Yêu cầu máy đã có: .NET 10 SDK, Node.js, và một SQL Server instance (f
 
 ```
 # Backend (chạy từ thư mục root)
-dotnet ef database update --project src/Infrastructure/ShopeeClone.Infrastructure.csproj --startup-project src/API/ShopeeClone.API.csproj
-dotnet run --project src/API/ShopeeClone.API.csproj
+dotnet ef database update --project src/Infrastructure/HungStore.Infrastructure.csproj --startup-project src/API/HungStore.API.csproj
+dotnet run --project src/API/HungStore.API.csproj
 # Swagger UI: https://localhost:<port>/swagger
 # Health check: https://localhost:<port>/health
 
@@ -152,7 +152,7 @@ dotnet test
 
 Tạo migration mới khi thêm/sửa entity (chạy từ thư mục root):
 ```
-dotnet ef migrations add <TenMigration> --project src/Infrastructure/ShopeeClone.Infrastructure.csproj --startup-project src/API/ShopeeClone.API.csproj --output-dir Persistence/Migrations
+dotnet ef migrations add <TenMigration> --project src/Infrastructure/HungStore.Infrastructure.csproj --startup-project src/API/HungStore.API.csproj --output-dir Persistence/Migrations
 ```
 
 ## 7. Theo dõi tiến độ

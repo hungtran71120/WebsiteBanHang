@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace ShopeeClone.Infrastructure.Identity;
+namespace HungStore.Infrastructure.Identity;
 
 public class ApplicationUser : IdentityUser
 {

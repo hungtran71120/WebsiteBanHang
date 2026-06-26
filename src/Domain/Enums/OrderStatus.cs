@@ -1,4 +1,4 @@
-namespace ShopeeClone.Domain.Enums;
+namespace HungStore.Domain.Enums;
 
 public enum OrderStatus
 {
