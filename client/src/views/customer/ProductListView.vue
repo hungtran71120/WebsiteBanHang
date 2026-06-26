@@ -440,6 +440,7 @@ onBeforeUnmount(() => {
 @media (max-width: 768px) {
   .category-page__inner {
     flex-direction: column;
+    align-items: stretch;
   }
 }
 
@@ -790,19 +791,19 @@ onBeforeUnmount(() => {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
 
 @media (max-width: 900px) {
   .product-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 480px) {
   .product-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

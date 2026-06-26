@@ -223,6 +223,7 @@ onMounted(load)
 @media (max-width: 768px) {
   .order-history-page__inner {
     flex-direction: column;
+    align-items: stretch;
   }
 }
 

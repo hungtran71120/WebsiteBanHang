@@ -113,6 +113,7 @@ onMounted(load)
 @media (max-width: 768px) {
   .account-page__inner {
     flex-direction: column;
+    align-items: stretch;
   }
 }
 
