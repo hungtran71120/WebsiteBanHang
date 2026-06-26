@@ -157,7 +157,7 @@ async function openManage(flashSale: FlashSale) {
 
   if (allProducts.value.length === 0) {
     try {
-      const result = await getProducts({ page: 1, pageSize: 200 })
+      const result = await getProducts({ page: 1, pageSize: 100 })
       allProducts.value = result.items
     } catch {
       allProducts.value = []
