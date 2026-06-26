@@ -36,3 +36,7 @@ src/API/wwwroot/uploads/**
 # =========================
 Thumbs.db
 .DS_Store
+
+# Local secrets, never commit
+appsettings.Local.json
+appsettings.*.local.json
