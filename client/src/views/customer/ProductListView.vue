@@ -47,6 +47,8 @@ const pageSize = 12
 const sentinel = ref<HTMLElement | null>(null)
 let observer: IntersectionObserver | null = null
 
+const isMobileFiltersOpen = ref(false)
+
 const hasMore = computed(() => page.value < totalPages.value)
 
 const rootCategories = computed(() => categories.value.filter((c) => !c.parentCategoryId))
@@ -169,10 +171,12 @@ async function loadMore() {
 
 function selectCategory(id: string) {
   categoryId.value = id
+  isMobileFiltersOpen.value = false
   resetAndLoad()
 }
 
 function applyPriceFilter() {
+  isMobileFiltersOpen.value = false
   resetAndLoad()
 }
 
@@ -229,7 +233,22 @@ onBeforeUnmount(() => {
 <template>
   <main class="category-page">
     <div class="category-page__inner">
-      <aside class="sidebar">
+      <button
+        type="button"
+        class="mobile-filter-toggle"
+        :aria-expanded="isMobileFiltersOpen"
+        @click="isMobileFiltersOpen = !isMobileFiltersOpen"
+      >
+        <AppIcon name="menu" :size="16" />
+        Danh Mục & Bộ Lọc
+        <AppIcon
+          name="chevron-left"
+          :size="14"
+          :style="{ transform: isMobileFiltersOpen ? 'rotate(90deg)' : 'rotate(-90deg)' }"
+        />
+      </button>
+
+      <aside class="sidebar" :class="{ 'sidebar--open': isMobileFiltersOpen }">
         <div class="sidebar__section">
           <h3><AppIcon name="menu" :size="16" /> Tất Cả Danh Mục</h3>
           <ul class="category-tree">
@@ -451,10 +470,38 @@ onBeforeUnmount(() => {
   gap: 16px;
 }
 
+.mobile-filter-toggle {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  .mobile-filter-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+  }
+
+  .mobile-filter-toggle svg:last-child {
+    margin-left: auto;
+  }
+
   .sidebar {
     flex: 1 1 100%;
     width: 100%;
+    display: none;
+  }
+
+  .sidebar.sidebar--open {
+    display: flex;
   }
 }
 
