@@ -6,18 +6,18 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using ShopeeClone.Application.Auth.Interfaces;
-using ShopeeClone.Application.Notifications.Interfaces;
-using ShopeeClone.Application.Products.Interfaces;
-using ShopeeClone.Domain.Interfaces;
-using ShopeeClone.Infrastructure.BackgroundJobs;
-using ShopeeClone.Infrastructure.Email;
-using ShopeeClone.Infrastructure.FileStorage;
-using ShopeeClone.Infrastructure.Identity;
-using ShopeeClone.Infrastructure.Persistence;
-using ShopeeClone.Infrastructure.Persistence.Repositories;
+using HungStore.Application.Auth.Interfaces;
+using HungStore.Application.Notifications.Interfaces;
+using HungStore.Application.Products.Interfaces;
+using HungStore.Domain.Interfaces;
+using HungStore.Infrastructure.BackgroundJobs;
+using HungStore.Infrastructure.Email;
+using HungStore.Infrastructure.FileStorage;
+using HungStore.Infrastructure.Identity;
+using HungStore.Infrastructure.Persistence;
+using HungStore.Infrastructure.Persistence.Repositories;
 
-namespace ShopeeClone.Infrastructure;
+namespace HungStore.Infrastructure;
 
 public static class DependencyInjection
 {
@@ -89,9 +89,20 @@ public static class DependencyInjection
         services.AddScoped<IWishlistRepository, WishlistRepository>();
         services.AddScoped<IVoucherRepository, VoucherRepository>();
         services.AddScoped<IFlashSaleRepository, FlashSaleRepository>();
-        var uploadsRootPath = configuration["Storage:UploadsRootPath"];
-        var effectiveUploadsRoot = string.IsNullOrWhiteSpace(uploadsRootPath) ? webRootPath : uploadsRootPath;
-        services.AddSingleton<IFileStorageService>(new LocalFileStorageService(effectiveUploadsRoot));
+        services.AddScoped<IBannerRepository, BannerRepository>();
+        var blobConnectionString = configuration["Storage:AzureBlob:ConnectionString"];
+        if (!string.IsNullOrWhiteSpace(blobConnectionString))
+        {
+            var containerName = configuration["Storage:AzureBlob:ContainerName"];
+            var effectiveContainerName = string.IsNullOrWhiteSpace(containerName) ? "uploads" : containerName;
+            services.AddSingleton<IFileStorageService>(new AzureBlobFileStorageService(blobConnectionString, effectiveContainerName));
+        }
+        else
+        {
+            var uploadsRootPath = configuration["Storage:UploadsRootPath"];
+            var effectiveUploadsRoot = string.IsNullOrWhiteSpace(uploadsRootPath) ? webRootPath : uploadsRootPath;
+            services.AddSingleton<IFileStorageService>(new LocalFileStorageService(effectiveUploadsRoot));
+        }
 
         services.Configure<EmailSettings>(configuration.GetSection(EmailSettings.SectionName));
         services.AddScoped<IEmailSender, SmtpEmailSender>();

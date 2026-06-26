@@ -5,6 +5,9 @@ export function resolveImageUrl(imageUrl: string | null): string | null {
   if (!imageUrl) {
     return null
   }
+  if (/^https?:\/\//i.test(imageUrl)) {
+    return imageUrl
+  }
   return `${API_ORIGIN}${imageUrl}`
 }
 

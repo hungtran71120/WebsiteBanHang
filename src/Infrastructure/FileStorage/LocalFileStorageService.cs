@@ -1,18 +1,9 @@
-using ShopeeClone.Application.Products.Interfaces;
+using HungStore.Application.Products.Interfaces;
 
-namespace ShopeeClone.Infrastructure.FileStorage;
+namespace HungStore.Infrastructure.FileStorage;
 
 public class LocalFileStorageService : IFileStorageService
 {
-    private const long MaxFileSizeBytes = 5 * 1024 * 1024;
-
-    private static readonly Dictionary<string, string> AllowedContentTypes = new()
-    {
-        ["image/jpeg"] = ".jpg",
-        ["image/png"] = ".png",
-        ["image/webp"] = ".webp"
-    };
-
     private readonly string _webRootPath;
 
     public LocalFileStorageService(string webRootPath)
@@ -20,19 +11,21 @@ public class LocalFileStorageService : IFileStorageService
         _webRootPath = webRootPath;
     }
 
-    public async Task<string> SaveProductImageAsync(Stream content, string contentType)
+    public Task<string> SaveProductImageAsync(Stream content, string contentType)
     {
-        if (!AllowedContentTypes.TryGetValue(contentType, out var extension))
-        {
-            throw new ArgumentException("Chỉ hỗ trợ ảnh JPEG, PNG hoặc WEBP.");
-        }
+        return SaveImageAsync(content, contentType, "products");
+    }
 
-        if (content.Length > MaxFileSizeBytes)
-        {
-            throw new ArgumentException("Kích thước ảnh không được vượt quá 5MB.");
-        }
+    public Task<string> SaveBannerImageAsync(Stream content, string contentType)
+    {
+        return SaveImageAsync(content, contentType, "banners");
+    }
 
-        var uploadsFolder = Path.Combine(_webRootPath, "uploads", "products");
+    private async Task<string> SaveImageAsync(Stream content, string contentType, string subfolder)
+    {
+        var extension = ImageValidation.ResolveExtension(content, contentType);
+
+        var uploadsFolder = Path.Combine(_webRootPath, "uploads", subfolder);
         Directory.CreateDirectory(uploadsFolder);
 
         var uniqueFileName = $"{Guid.NewGuid()}{extension}";
@@ -41,6 +34,6 @@ public class LocalFileStorageService : IFileStorageService
         await using var fileStream = new FileStream(filePath, FileMode.Create);
         await content.CopyToAsync(fileStream);
 
-        return $"/uploads/products/{uniqueFileName}";
+        return $"/uploads/{subfolder}/{uniqueFileName}";
     }
 }
