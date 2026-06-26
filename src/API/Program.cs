@@ -52,7 +52,17 @@ builder.Services.AddSwaggerGen(options =>
 
 var app = builder.Build();
 
-await SeedData.SeedAsync(app.Services);
+app.Lifetime.ApplicationStarted.Register(() => _ = Task.Run(async () =>
+{
+    try
+    {
+        await SeedData.SeedAsync(app.Services);
+    }
+    catch (Exception ex)
+    {
+        app.Services.GetRequiredService<ILogger<Program>>().LogError(ex, "Database seeding failed on startup");
+    }
+}));
 
 // Configure the HTTP request pipeline.
 app.UseMiddleware<ExceptionHandlingMiddleware>();
