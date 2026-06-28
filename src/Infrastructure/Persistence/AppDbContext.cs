@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using HungStore.Domain.Entities;
 using HungStore.Infrastructure.Identity;
+using HungStore.Infrastructure.Persistence.Converters;
 
 namespace HungStore.Infrastructure.Persistence;
 
@@ -38,5 +39,12 @@ public class AppDbContext : IdentityDbContext<ApplicationUser>
     {
         base.OnModelCreating(builder);
         builder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+    }
+
+    protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+    {
+        base.ConfigureConventions(configurationBuilder);
+        configurationBuilder.Properties<DateTime>().HaveConversion<UtcDateTimeConverter>();
+        configurationBuilder.Properties<DateTime?>().HaveConversion<UtcNullableDateTimeConverter>();
     }
 }
