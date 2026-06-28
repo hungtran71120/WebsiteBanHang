@@ -2,10 +2,12 @@
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useCartStore } from '../../stores/cart'
+import { useConfirmStore } from '../../stores/confirm'
 import { resolveImageUrl } from '../../utils/url'
 
 const router = useRouter()
 const cartStore = useCartStore()
+const confirmStore = useConfirmStore()
 const isLoading = ref(true)
 const errorMessage = ref('')
 
@@ -31,6 +33,10 @@ async function changeQuantity(cartItemId: string, quantity: number) {
 }
 
 async function removeItem(cartItemId: string) {
+  const confirmed = await confirmStore.ask('Bạn có chắc muốn xóa sản phẩm này khỏi giỏ hàng?')
+  if (!confirmed) {
+    return
+  }
   await cartStore.removeItem(cartItemId)
 }
 

@@ -38,6 +38,16 @@ public class VoucherRepository : IVoucherRepository
         return (items, totalCount);
     }
 
+    public async Task<IReadOnlyList<Voucher>> GetActiveAsync()
+    {
+        var now = DateTime.UtcNow;
+        return await _context.Vouchers
+            .AsNoTracking()
+            .Where(v => v.IsActive && v.ExpiresAt >= now)
+            .OrderBy(v => v.ExpiresAt)
+            .ToListAsync();
+    }
+
     public async Task AddAsync(Voucher voucher)
     {
         _context.Vouchers.Add(voucher);

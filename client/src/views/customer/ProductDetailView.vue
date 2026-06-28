@@ -6,6 +6,7 @@ import { createReview, deleteReview, getProductReviews, updateReview } from '../
 import { getProductById, getRelatedProducts } from '../../api/products'
 import { useAuthStore } from '../../stores/auth'
 import { useCartStore } from '../../stores/cart'
+import { useNotifyStore } from '../../stores/notify'
 import { useWishlistStore } from '../../stores/wishlist'
 import type { Product, ProductVariantOptionValue } from '../../types/product'
 import type { Review } from '../../types/review'
@@ -16,6 +17,7 @@ const router = useRouter()
 const authStore = useAuthStore()
 const cartStore = useCartStore()
 const wishlistStore = useWishlistStore()
+const notifyStore = useNotifyStore()
 
 const canUseWishlist = computed(() => authStore.isAuthenticated && !authStore.isAdmin)
 
@@ -30,7 +32,6 @@ const product = ref<Product | null>(null)
 const errorMessage = ref('')
 const isLoading = ref(true)
 const quantity = ref(1)
-const addToCartMessage = ref('')
 const isAddingToCart = ref(false)
 const selectedValue1 = ref<ProductVariantOptionValue | null>(null)
 const selectedValue2 = ref<ProductVariantOptionValue | null>(null)
@@ -254,18 +255,17 @@ async function addToCart() {
   }
 
   if (product.value!.variantOptions.length > 0 && !selectedVariant.value) {
-    addToCartMessage.value = 'Vui lòng chọn đầy đủ phân loại.'
+    notifyStore.show('Vui lòng chọn đầy đủ phân loại.')
     return
   }
 
-  addToCartMessage.value = ''
   isAddingToCart.value = true
   try {
     await cartStore.addItem(product.value!.id, quantity.value, selectedVariant.value?.id ?? null)
-    addToCartMessage.value = 'Đã thêm vào giỏ hàng.'
+    notifyStore.show('Đã thêm vào giỏ hàng.')
   } catch (error: unknown) {
     const messages = (error as { response?: { data?: string[] } })?.response?.data
-    addToCartMessage.value = messages?.[0] ?? 'Không thể thêm vào giỏ hàng.'
+    notifyStore.show(messages?.[0] ?? 'Không thể thêm vào giỏ hàng.')
   } finally {
     isAddingToCart.value = false
   }
@@ -403,7 +403,6 @@ async function addToCart() {
               {{ wishlistStore.has(product.id) ? 'Đã Yêu Thích' : 'Yêu Thích' }}
             </button>
           </div>
-          <p v-if="addToCartMessage" class="add-to-cart-message">{{ addToCartMessage }}</p>
         </div>
       </div>
 
@@ -790,12 +789,6 @@ async function addToCart() {
 
 .add-to-cart-btn:disabled {
   opacity: 0.6;
-}
-
-.add-to-cart-message {
-  margin-top: 10px;
-  font-size: 13px;
-  color: var(--shopee-orange);
 }
 
 .wishlist-btn {

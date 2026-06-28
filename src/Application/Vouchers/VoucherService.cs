@@ -98,6 +98,30 @@ public class VoucherService : IVoucherService
         };
     }
 
+    public async Task<IReadOnlyList<VoucherDto>> GetAvailableForUserAsync(string userId)
+    {
+        var vouchers = await _voucherRepository.GetActiveAsync();
+        var result = new List<VoucherDto>();
+
+        foreach (var voucher in vouchers)
+        {
+            if (voucher.MaxUsageCount.HasValue && voucher.UsedCount >= voucher.MaxUsageCount.Value)
+            {
+                continue;
+            }
+
+            var userRedemptionCount = await _voucherRepository.GetUserRedemptionCountAsync(voucher.Id, userId);
+            if (userRedemptionCount >= voucher.MaxUsagePerUser)
+            {
+                continue;
+            }
+
+            result.Add(MapToDto(voucher));
+        }
+
+        return result;
+    }
+
     public async Task<ServiceResult<VoucherDto>> CreateAsync(CreateVoucherRequest request)
     {
         var existing = await _voucherRepository.GetByCodeAsync(request.Code);

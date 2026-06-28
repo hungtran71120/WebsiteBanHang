@@ -52,6 +52,14 @@ public class VouchersController : ControllerBase
         return Ok(result.Data);
     }
 
+    [HttpGet("available")]
+    [Authorize]
+    public async Task<IActionResult> GetAvailable()
+    {
+        var result = await _voucherService.GetAvailableForUserAsync(CurrentUserId);
+        return Ok(result);
+    }
+
     [HttpGet]
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> GetPaged([FromQuery] int page = 1, [FromQuery] int pageSize = 10)

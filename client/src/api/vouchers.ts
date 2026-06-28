@@ -13,6 +13,10 @@ export function validateVoucher(code: string) {
     .then((response) => response.data)
 }
 
+export function getAvailableVouchers() {
+  return apiClient.get<Voucher[]>('/vouchers/available').then((response) => response.data)
+}
+
 export function getVouchers(page: number, pageSize: number) {
   return apiClient
     .get<PagedResult<Voucher>>('/vouchers', { params: { page, pageSize } })

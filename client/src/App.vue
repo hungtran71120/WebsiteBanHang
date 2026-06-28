@@ -4,6 +4,8 @@ import { useRoute } from 'vue-router'
 import AppHeader from './layouts/AppHeader.vue'
 import AppFooter from './layouts/AppFooter.vue'
 import ChatWidget from './components/ChatWidget.vue'
+import ConfirmModal from './components/ConfirmModal.vue'
+import NotifyModal from './components/NotifyModal.vue'
 import { useAuthStore } from './stores/auth'
 import { useCartStore } from './stores/cart'
 import { useWishlistStore } from './stores/wishlist'
@@ -31,4 +33,6 @@ onMounted(async () => {
   <RouterView />
   <AppFooter v-if="!isAdminRoute" />
   <ChatWidget v-if="showChatWidget" />
+  <NotifyModal />
+  <ConfirmModal />
 </template>

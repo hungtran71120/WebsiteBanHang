@@ -2,14 +2,15 @@
 import { onMounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useCartStore } from '../../stores/cart'
+import { useNotifyStore } from '../../stores/notify'
 import { useWishlistStore } from '../../stores/wishlist'
 import { resolveImageUrl } from '../../utils/url'
 
 const wishlistStore = useWishlistStore()
 const cartStore = useCartStore()
+const notifyStore = useNotifyStore()
 const isLoading = ref(true)
 const errorMessage = ref('')
-const addToCartMessage = ref('')
 
 onMounted(async () => {
   try {
@@ -26,12 +27,11 @@ async function removeItem(productId: string) {
 }
 
 async function addToCart(productId: string) {
-  addToCartMessage.value = ''
   try {
     await cartStore.addItem(productId, 1)
-    addToCartMessage.value = 'Đã thêm vào giỏ hàng.'
+    notifyStore.show('Đã thêm vào giỏ hàng.')
   } catch {
-    addToCartMessage.value = 'Không thể thêm vào giỏ hàng.'
+    notifyStore.show('Không thể thêm vào giỏ hàng.')
   }
 }
 </script>
@@ -49,7 +49,6 @@ async function addToCart(productId: string) {
       </p>
 
       <template v-else>
-        <p v-if="addToCartMessage" class="add-to-cart-message">{{ addToCartMessage }}</p>
         <div class="wishlist-grid">
           <div v-for="item in wishlistStore.wishlist.items" :key="item.productId" class="wishlist-card">
             <RouterLink :to="`/products/${item.productId}`">
@@ -102,12 +101,6 @@ h1 {
 .state-message a {
   color: var(--shopee-orange);
   text-decoration: none;
-}
-
-.add-to-cart-message {
-  margin-bottom: 12px;
-  font-size: 13px;
-  color: var(--shopee-orange);
 }
 
 .wishlist-grid {

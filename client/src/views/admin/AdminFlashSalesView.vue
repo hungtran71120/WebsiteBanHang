@@ -134,23 +134,72 @@ const allProducts = ref<Product[]>([])
 
 const newItemProductId = ref('')
 const newItemSalePrice = ref(0)
+const newItemDiscountPercent = ref(0)
 const newItemQuantityLimit = ref(10)
 const isAddingItem = ref(false)
 
 const editingItemId = ref<string | null>(null)
 const editItemSalePrice = ref(0)
+const editItemDiscountPercent = ref(0)
 const editItemQuantityLimit = ref(0)
+const editItemOriginalPrice = ref(0)
 
 const availableProducts = computed(() => {
   const usedIds = new Set(managingFlashSale.value?.items.map((i) => i.productId) ?? [])
   return allProducts.value.filter((p) => !usedIds.has(p.id))
 })
 
+const newItemOriginalPrice = computed(() => {
+  return allProducts.value.find((p) => p.id === newItemProductId.value)?.price ?? 0
+})
+
+function roundMoney(value: number) {
+  return Math.max(0, Math.round(value))
+}
+
+function roundPercent(value: number) {
+  return Math.round(value * 100) / 100
+}
+
+function syncNewItemPriceFromPercent() {
+  if (newItemOriginalPrice.value <= 0) {
+    return
+  }
+  newItemSalePrice.value = roundMoney(newItemOriginalPrice.value * (1 - newItemDiscountPercent.value / 100))
+}
+
+function syncNewItemPercentFromPrice() {
+  if (newItemOriginalPrice.value <= 0) {
+    return
+  }
+  newItemDiscountPercent.value = roundPercent((1 - newItemSalePrice.value / newItemOriginalPrice.value) * 100)
+}
+
+function onNewItemProductChange() {
+  newItemSalePrice.value = 0
+  newItemDiscountPercent.value = 0
+}
+
+function syncEditItemPriceFromPercent() {
+  if (editItemOriginalPrice.value <= 0) {
+    return
+  }
+  editItemSalePrice.value = roundMoney(editItemOriginalPrice.value * (1 - editItemDiscountPercent.value / 100))
+}
+
+function syncEditItemPercentFromPrice() {
+  if (editItemOriginalPrice.value <= 0) {
+    return
+  }
+  editItemDiscountPercent.value = roundPercent((1 - editItemSalePrice.value / editItemOriginalPrice.value) * 100)
+}
+
 async function openManage(flashSale: FlashSale) {
   managingFlashSale.value = flashSale
   manageErrorMessage.value = ''
   newItemProductId.value = ''
   newItemSalePrice.value = 0
+  newItemDiscountPercent.value = 0
   newItemQuantityLimit.value = 10
   editingItemId.value = null
   isManageOpen.value = true
@@ -198,6 +247,7 @@ async function submitAddItem() {
     })
     newItemProductId.value = ''
     newItemSalePrice.value = 0
+    newItemDiscountPercent.value = 0
     newItemQuantityLimit.value = 10
     await reloadManaging()
   } catch (err: any) {
@@ -211,6 +261,10 @@ function startEditItem(item: FlashSaleItem) {
   editingItemId.value = item.id
   editItemSalePrice.value = item.salePrice
   editItemQuantityLimit.value = item.quantityLimit
+  editItemOriginalPrice.value = item.originalPrice
+  editItemDiscountPercent.value = item.originalPrice > 0
+    ? roundPercent((1 - item.salePrice / item.originalPrice) * 100)
+    : 0
 }
 
 function cancelEditItem() {
@@ -342,7 +396,24 @@ onMounted(load)
               <td>₫{{ item.originalPrice.toLocaleString('vi-VN') }}</td>
               <td>
                 <template v-if="editingItemId === item.id">
-                  <input v-model.number="editItemSalePrice" type="number" min="0" class="inline-input" />
+                  <div class="dual-input">
+                    <input
+                      v-model.number="editItemDiscountPercent"
+                      type="number"
+                      min="0"
+                      max="100"
+                      class="inline-input inline-input--percent"
+                      @input="syncEditItemPriceFromPercent"
+                    />
+                    <span>%</span>
+                    <input
+                      v-model.number="editItemSalePrice"
+                      type="number"
+                      min="0"
+                      class="inline-input"
+                      @input="syncEditItemPercentFromPrice"
+                    />
+                  </div>
                 </template>
                 <template v-else>₫{{ item.salePrice.toLocaleString('vi-VN') }}</template>
               </td>
@@ -370,26 +441,43 @@ onMounted(load)
         </table>
 
         <div class="add-item-form">
-          <label class="form-field">
+          <label class="form-field add-item-form__product">
             <span>Sản phẩm</span>
-            <select v-model="newItemProductId">
+            <select v-model="newItemProductId" @change="onNewItemProductChange">
               <option value="">-- Chọn sản phẩm --</option>
               <option v-for="p in availableProducts" :key="p.id" :value="p.id">{{ p.name }} (₫{{ p.price.toLocaleString('vi-VN') }})</option>
             </select>
           </label>
-          <label class="form-field">
-            <span>Giá sale</span>
-            <input v-model.number="newItemSalePrice" type="number" min="0" />
+          <label class="form-field add-item-form__narrow">
+            <span>% giảm giá</span>
+            <input
+              v-model.number="newItemDiscountPercent"
+              type="number"
+              min="0"
+              max="100"
+              :disabled="!newItemProductId"
+              @input="syncNewItemPriceFromPercent"
+            />
           </label>
-          <label class="form-field">
+          <label class="form-field add-item-form__narrow">
+            <span>Giá sale</span>
+            <input
+              v-model.number="newItemSalePrice"
+              type="number"
+              min="0"
+              :disabled="!newItemProductId"
+              @input="syncNewItemPercentFromPrice"
+            />
+          </label>
+          <label class="form-field add-item-form__narrow">
             <span>Giới hạn số lượng</span>
             <input v-model.number="newItemQuantityLimit" type="number" min="1" />
           </label>
-          <button type="button" class="btn-primary" :disabled="isAddingItem" @click="submitAddItem">+ Thêm vào flash sale</button>
         </div>
 
         <div class="modal-actions">
           <button type="button" class="btn-secondary" @click="closeManage">Đóng</button>
+          <button type="button" class="btn-primary" :disabled="isAddingItem" @click="submitAddItem">+ Thêm vào flash sale</button>
         </div>
       </div>
     </div>
@@ -404,13 +492,23 @@ onMounted(load)
 }
 
 .modal-box--wide {
-  width: 720px;
+  width: 820px;
   max-width: 90vw;
 }
 
 .inline-input {
   width: 90px;
   padding: 4px 6px;
+}
+
+.dual-input {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.inline-input--percent {
+  width: 60px;
 }
 
 .add-item-form {
@@ -424,5 +522,15 @@ onMounted(load)
 .add-item-form .form-field {
   flex: 1;
   min-width: 160px;
+}
+
+.add-item-form__product {
+  flex: 2;
+  min-width: 200px;
+}
+
+.add-item-form__narrow {
+  flex: 1;
+  min-width: 110px;
 }
 </style>
