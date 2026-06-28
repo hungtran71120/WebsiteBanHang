@@ -309,8 +309,8 @@ onBeforeUnmount(() => {
               <div v-else class="product-card__placeholder">Không có ảnh</div>
               <h4 class="line-clamp-2">{{ item.productName }}</h4>
               <p class="flash-sale-card__price">
-                <span class="sale">₫{{ item.salePrice.toLocaleString('vi-VN') }}</span>
                 <span class="original">₫{{ item.originalPrice.toLocaleString('vi-VN') }}</span>
+                <span class="sale">₫{{ item.salePrice.toLocaleString('vi-VN') }}</span>
               </p>
               <p v-if="item.reviewCount > 0" class="flash-sale-card__rating">
                 <span
@@ -679,8 +679,8 @@ onBeforeUnmount(() => {
 .flash-sale-card__price {
   margin: 0 6px 6px;
   display: flex;
-  align-items: baseline;
-  gap: 6px;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .flash-sale-card__price .sale {
