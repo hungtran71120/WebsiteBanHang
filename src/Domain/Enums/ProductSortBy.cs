@@ -1,4 +1,4 @@
-namespace HungStore.Domain.Interfaces;
+namespace HungStore.Domain.Enums;
 
 public enum ProductSortBy
 {

@@ -1,4 +1,4 @@
-namespace HungStore.Application.Products.Interfaces;
+namespace HungStore.Application.Common.Interfaces;
 
 public interface IFileStorageService
 {
