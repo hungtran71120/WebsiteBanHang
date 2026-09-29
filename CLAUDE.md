@@ -64,7 +64,7 @@ Website thương mại điện tử single-vendor lấy cảm hứng từ Shopee
 |---|---|
 | Mô hình kinh doanh | Single-vendor — 1 Admin quản lý toàn bộ sản phẩm, không có Seller/marketplace |
 | Thanh toán | Giả lập (mock checkout — COD hoặc đánh dấu "đã thanh toán" giả). Không tích hợp cổng thanh toán thật ở giai đoạn này |
-| Lưu ảnh | Local `wwwroot/uploads` khi dev; Azure Blob Storage khi deploy production (chọn tự động qua `Storage:AzureBlob:ConnectionString` — rỗng thì dùng Local, có giá trị thì dùng Blob) |
+| Lưu ảnh | Local `wwwroot/uploads` |
 | Docker | Không dùng, chạy trực tiếp local |
 | Testing | Bắt buộc viết unit test + integration test cho mọi phase, không được bỏ qua để "làm nhanh" |
 | Admin Dashboard | Cùng 1 Vue app với route `/admin`, không tách project riêng |

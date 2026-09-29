@@ -91,19 +91,9 @@ public static class DependencyInjection
         services.AddScoped<IVoucherRepository, VoucherRepository>();
         services.AddScoped<IFlashSaleRepository, FlashSaleRepository>();
         services.AddScoped<IBannerRepository, BannerRepository>();
-        var blobConnectionString = configuration["Storage:AzureBlob:ConnectionString"];
-        if (!string.IsNullOrWhiteSpace(blobConnectionString))
-        {
-            var containerName = configuration["Storage:AzureBlob:ContainerName"];
-            var effectiveContainerName = string.IsNullOrWhiteSpace(containerName) ? "uploads" : containerName;
-            services.AddSingleton<IFileStorageService>(new AzureBlobFileStorageService(blobConnectionString, effectiveContainerName));
-        }
-        else
-        {
-            var uploadsRootPath = configuration["Storage:UploadsRootPath"];
-            var effectiveUploadsRoot = string.IsNullOrWhiteSpace(uploadsRootPath) ? webRootPath : uploadsRootPath;
-            services.AddSingleton<IFileStorageService>(new LocalFileStorageService(effectiveUploadsRoot));
-        }
+        var uploadsRootPath = configuration["Storage:UploadsRootPath"];
+        var effectiveUploadsRoot = string.IsNullOrWhiteSpace(uploadsRootPath) ? webRootPath : uploadsRootPath;
+        services.AddSingleton<IFileStorageService>(new LocalFileStorageService(effectiveUploadsRoot));
 
         services.Configure<EmailSettings>(configuration.GetSection(EmailSettings.SectionName));
         services.AddScoped<IEmailSender, SmtpEmailSender>();
