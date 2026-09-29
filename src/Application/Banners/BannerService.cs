@@ -1,7 +1,7 @@
 using HungStore.Application.Banners.Dtos;
 using HungStore.Application.Banners.Interfaces;
 using HungStore.Application.Common;
-using HungStore.Application.Products.Interfaces;
+using HungStore.Application.Common.Interfaces;
 using HungStore.Domain.Entities;
 using HungStore.Domain.Interfaces;
 

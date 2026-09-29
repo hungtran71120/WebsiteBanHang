@@ -1,4 +1,5 @@
 using HungStore.Domain.Entities;
+using HungStore.Domain.Enums;
 
 namespace HungStore.Domain.Interfaces;
 

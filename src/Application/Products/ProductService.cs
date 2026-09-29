@@ -1,4 +1,5 @@
 using HungStore.Application.Common;
+using HungStore.Application.Common.Interfaces;
 using HungStore.Application.Products.Dtos;
 using HungStore.Application.Products.Interfaces;
 using HungStore.Domain.Entities;
@@ -33,7 +34,7 @@ public class ProductService : IProductService
 
     public async Task<PagedResult<ProductDto>> GetPagedAsync(ProductFilterRequest filter)
     {
-        var (items, totalCount) = await _productRepository.GetPagedAsync(
+        (IEnumerable<Product> items, int totalCount) = await _productRepository.GetPagedAsync(
             filter.Keyword, filter.CategoryId, filter.MinPrice, filter.MaxPrice, filter.SortBy, filter.Page, filter.PageSize);
 
         var dtos = items.Select(MapToDto).ToList();

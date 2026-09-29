@@ -1,4 +1,4 @@
-using HungStore.Domain.Interfaces;
+using HungStore.Domain.Enums;
 
 namespace HungStore.Application.Products.Dtos;
 

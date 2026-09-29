@@ -16,6 +16,7 @@ using HungStore.Infrastructure.FileStorage;
 using HungStore.Infrastructure.Identity;
 using HungStore.Infrastructure.Persistence;
 using HungStore.Infrastructure.Persistence.Repositories;
+using HungStore.Application.Common.Interfaces;
 
 namespace HungStore.Infrastructure;
 
@@ -24,8 +25,8 @@ public static class DependencyInjection
     public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration, string webRootPath)
     {
         services.AddDbContext<AppDbContext>(options =>
-            options.UseSqlServer(
-                configuration.GetConnectionString("DefaultConnection"),
+            options.UseNpgsql(
+                configuration.GetConnectionString("PostgreSqlConnection"),
                 sqlOptions => sqlOptions.EnableRetryOnFailure()));
 
         services

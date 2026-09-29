@@ -22,4 +22,5 @@
   <Folder Name="/tests/Domain.UnitTests/">
     <Project Path="tests/Domain.UnitTests/HungStore.Domain.UnitTests.csproj" />
   </Folder>
+  <Project Path="HungStore.DataMigration/HungStore.DataMigration.csproj" Id="189d5907-8531-464a-a7f0-af0d46fd0b00" />
 </Solution>

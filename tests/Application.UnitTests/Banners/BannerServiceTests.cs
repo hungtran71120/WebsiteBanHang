@@ -1,10 +1,10 @@
 using FluentAssertions;
-using Moq;
 using HungStore.Application.Banners;
 using HungStore.Application.Banners.Dtos;
-using HungStore.Application.Products.Interfaces;
+using HungStore.Application.Common.Interfaces;
 using HungStore.Domain.Entities;
 using HungStore.Domain.Interfaces;
+using Moq;
 
 namespace HungStore.Application.UnitTests.Banners;
 

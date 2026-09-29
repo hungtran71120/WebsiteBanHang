@@ -1,4 +1,4 @@
-using HungStore.Application.Products.Interfaces;
+using HungStore.Application.Common.Interfaces;
 
 namespace HungStore.Infrastructure.FileStorage;
 

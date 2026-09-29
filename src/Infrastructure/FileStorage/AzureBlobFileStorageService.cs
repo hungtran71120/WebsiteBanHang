@@ -1,6 +1,6 @@
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
-using HungStore.Application.Products.Interfaces;
+using HungStore.Application.Common.Interfaces;
 
 namespace HungStore.Infrastructure.FileStorage;
 

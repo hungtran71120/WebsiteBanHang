@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using HungStore.Domain.Entities;
 using HungStore.Domain.Interfaces;
+using HungStore.Domain.Enums;
 
 namespace HungStore.Infrastructure.Persistence.Repositories;
 
