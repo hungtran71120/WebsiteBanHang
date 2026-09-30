@@ -35,7 +35,7 @@ public class ProductRepository : IProductRepository
 
         if (!string.IsNullOrWhiteSpace(keyword))
         {
-            query = query.Where(p => p.Name.Contains(keyword));
+            query = query.Where(p => p.Name.ToLower().Contains(keyword.ToLower()));
         }
 
         if (categoryId.HasValue)

@@ -1,14 +1,6 @@
-using System.Text;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
 using HungStore.Application.Auth.Interfaces;
+using HungStore.Application.Common.Interfaces;
 using HungStore.Application.Notifications.Interfaces;
-using HungStore.Application.Products.Interfaces;
 using HungStore.Domain.Interfaces;
 using HungStore.Infrastructure.BackgroundJobs;
 using HungStore.Infrastructure.Email;
@@ -16,7 +8,13 @@ using HungStore.Infrastructure.FileStorage;
 using HungStore.Infrastructure.Identity;
 using HungStore.Infrastructure.Persistence;
 using HungStore.Infrastructure.Persistence.Repositories;
-using HungStore.Application.Common.Interfaces;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace HungStore.Infrastructure;
 
@@ -93,7 +91,8 @@ public static class DependencyInjection
         services.AddScoped<IBannerRepository, BannerRepository>();
         var uploadsRootPath = configuration["Storage:UploadsRootPath"];
         var effectiveUploadsRoot = string.IsNullOrWhiteSpace(uploadsRootPath) ? webRootPath : uploadsRootPath;
-        services.AddSingleton<IFileStorageService>(new LocalFileStorageService(effectiveUploadsRoot));
+        //services.AddSingleton<IFileStorageService>(new LocalFileStorageService(effectiveUploadsRoot));
+        services.AddSingleton<IFileStorageService, SupabaseStorageService>();
 
         services.Configure<EmailSettings>(configuration.GetSection(EmailSettings.SectionName));
         services.AddScoped<IEmailSender, SmtpEmailSender>();
