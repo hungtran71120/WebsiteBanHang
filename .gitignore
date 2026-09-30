@@ -41,3 +41,4 @@ Thumbs.db
 appsettings.Local.json
 appsettings.*.local.json
 appsettings.Development.json
+/src/API/appsettings.Development.json
