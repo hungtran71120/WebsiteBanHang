@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
-import { useRoute } from 'vue-router'
 import { RouterLink } from 'vue-router'
 import AppIcon from '../../components/icons/AppIcon.vue'
 import BannerCarousel from '../../components/BannerCarousel.vue'
@@ -13,8 +12,10 @@ import type { FlashSale } from '../../types/flashSale'
 import { resolveImageUrl } from '../../utils/url'
 import { useAuthStore } from '../../stores/auth'
 import { useWishlistStore } from '../../stores/wishlist'
+import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
+const router = useRouter()
 const authStore = useAuthStore()
 const wishlistStore = useWishlistStore()
 
@@ -170,9 +171,11 @@ async function loadMore() {
 }
 
 function selectCategory(id: string) {
-  categoryId.value = id
   isMobileFiltersOpen.value = false
-  resetAndLoad()
+  router.push({
+    path: '/products',
+    query: id ? { categoryId: id } : {},
+  })
 }
 
 function applyPriceFilter() {
